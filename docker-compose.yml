@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    image: gitarplk:local
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
