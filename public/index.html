@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITARPLK - Interactive Tab Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Player Controls Bar -->
+    <header class="player-topbar">
+        <div class="brand">
+            <span class="logo">GITARPLK</span>
+            <span class="tagline">Songsterr Engine</span>
+        </div>
+
+        <div class="controls-main">
+            <button id="btn-play-pause" class="btn-play">▶ PLAY</button>
+            
+            <div class="bpm-control">
+                <label for="bpm-input">BPM:</label>
+                <input type="number" id="bpm-input" value="116" min="40" max="240">
+                <input type="range" id="bpm-slider" min="40" max="240" value="116">
+            </div>
+
+            <div class="track-picker" id="track-selector"></div>
+        </div>
+
+        <div class="topbar-actions">
+            <button id="btn-open-modal" class="btn-accent">+ Add Song & Preset</button>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <!-- Sidebar Song Directory -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Song Directory</h3>
+                <input type="text" id="song-search" placeholder="Filter songs or artists...">
+            </div>
+            <ul id="song-list" class="song-list"></ul>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <!-- Song Meta Header -->
+            <div id="song-meta-panel" class="meta-panel hidden">
+                <div class="meta-title-group">
+                    <h1 id="display-title">Select Song</h1>
+                    <h3 id="display-artist">Artist</h3>
+                    <span id="display-status" class="status-badge">Approved</span>
+                </div>
+
+                <!-- Rig & Preset Inspector -->
+                <div class="rig-inspector">
+                    <div class="rig-card">
+                        <div class="card-label">AMP HEAD</div>
+                        <div id="rig-amp-title" class="card-title">Mesa Boogie</div>
+                        <div id="rig-amp-knobs" class="knobs-grid"></div>
+                    </div>
+
+                    <div class="rig-card">
+                        <div class="card-label">PEDALS & EFFECTS</div>
+                        <div id="rig-pedals-list" class="pedals-list"></div>
+                    </div>
+
+                    <div class="rig-card compact">
+                        <div class="card-label">TUNING</div>
+                        <div id="rig-tuning" class="card-val">Standard E</div>
+                        <div class="card-label margin-top">PRESET</div>
+                        <div id="rig-preset-name" class="card-val">Grunge</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Canvas Display Engine -->
+            <div id="tab-viewport" class="tab-viewport hidden">
+                <div id="tab-canvas" class="tab-canvas">
+                    <!-- Dynamic rendered lines & cursor -->
+                </div>
+            </div>
+
+            <div id="empty-workspace" class="empty-state">
+                <div class="empty-icon">🎸</div>
+                <h2>No Song Selected</h2>
+                <p>Choose a song from the directory on the left or add a new tab.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal: Add Song & Preset Editor -->
+    <div id="add-song-modal" class="modal-overlay hidden">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h2>Add Song & Custom Rig Preset</h2>
+                <button id="btn-close-modal" class="close-btn">&times;</button>
+            </div>
+
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="tab-info">1. Song Details</button>
+                <button class="tab-btn" data-tab="tab-rig">2. Rig & Presets</button>
+                <button class="tab-btn" data-tab="tab-editor">3. Interactive Tab Editor</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Tab 1: Info -->
+                <div id="tab-info" class="tab-content active">
+                    <div class="form-row">
+                        <label>Artist Name</label>
+                        <input type="text" id="new-artist" placeholder="e.g. Nirvana">
+                    </div>
+                    <div class="form-row">
+                        <label>Song Title</label>
+                        <input type="text" id="new-title" placeholder="e.g. Smells Like Teen Spirit">
+                    </div>
+                    <div class="form-row">
+                        <label>Tempo (BPM)</label>
+                        <input type="number" id="new-bpm" value="120">
+                    </div>
+                    <div class="form-row">
+                        <label>Instrument</label>
+                        <select id="new-instrument">
+                            <option value="Guitar">Guitar (6 Strings)</option>
+                            <option value="Bass">Bass (4 Strings)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Rig & Presets -->
+                <div id="tab-rig" class="tab-content">
+                    <div class="form-row">
+                        <label>Preset Name</label>
+                        <input type="text" id="new-preset-name" placeholder="e.g. Heavy Distortion / High Gain">
+                    </div>
+                    <div class="form-row">
+                        <label>Tuning</label>
+                        <input type="text" id="new-tuning" value="Standard (E A D G B E)">
+                    </div>
+                    <div class="form-row">
+                        <label>Amp Model Name</label>
+                        <input type="text" id="new-amp-model" value="Custom Tube Amp">
+                    </div>
+                    <div class="form-row">
+                        <label>Amp EQ Settings (Gain, Bass, Mid, Treble)</label>
+                        <div class="inline-inputs">
+                            <input type="number" id="amp-g" placeholder="Gain" value="7">
+                            <input type="number" id="amp-b" placeholder="Bass" value="6">
+                            <input type="number" id="amp-m" placeholder="Mid" value="5">
+                            <input type="number" id="amp-t" placeholder="Treble" value="7">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Pedals Chain (comma separated)</label>
+                        <input type="text" id="new-pedal-name" placeholder="e.g. Boss DS-1, Ibanez Tube Screamer">
+                    </div>
+                </div>
+
+                <!-- Tab 3: Tab Editor -->
+                <div id="tab-editor" class="tab-content">
+                    <div class="tab-toolbar">
+                        <button id="btn-insert-bar" class="sm-btn">Insert Bar (|)</button>
+                        <button id="btn-insert-template" class="sm-btn">Load Blank Tab Template</button>
+                    </div>
+                    <textarea id="new-tab-text" spellcheck="false" placeholder="Write or paste your ASCII tablature here..."></textarea>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-cancel-modal">Cancel</button>
+                <button id="btn-submit-song" class="btn-accent">Save & Submit Song</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
