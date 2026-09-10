@@ -7,6 +7,7 @@ RUN npm ci --omit=dev
 
 COPY server.js ./
 COPY public ./public
+COPY data ./data
 
 EXPOSE 3000
 

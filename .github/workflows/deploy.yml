@@ -7,6 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      REMOTE_SSH_PORT: ${{ vars.REMOTE_SSH_PORT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,7 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "${{ vars.REMOTE_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -H -p "$REMOTE_SSH_PORT" "${{ vars.REMOTE_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Copy files
         run: |
@@ -25,15 +27,15 @@ jobs:
             --exclude '.github' \
             --exclude 'node_modules' \
             --exclude 'docker-compose.yml' \
-            -e "ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts" \
+            -e "ssh -p $REMOTE_SSH_PORT -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts" \
             ./ "${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_DIR }}/src/"
           rsync -az \
-            -e "ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts" \
+            -e "ssh -p $REMOTE_SSH_PORT -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts" \
             ./.github/docker/docker-compose.yml "${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_DIR }}/docker-compose.yml"
 
       - name: Deploy
         run: |
-          ssh -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts \
+          ssh -p "$REMOTE_SSH_PORT" -i ~/.ssh/deploy_key -o UserKnownHostsFile=~/.ssh/known_hosts \
             "${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}" \
             "set -e; \
              cd '${{ vars.REMOTE_DIR }}'; \
