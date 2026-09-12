@@ -4,9 +4,16 @@
   "description": "Minimalist guitar tablature player and editor",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "verify:converter": "node scripts/verify-converter.mjs",
+    "verify:ui": "node scripts/verify-ui.mjs"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@coderline/alphatab": "^1.8.4",
+    "express": "^4.18.2",
+    "multer": "^2.3.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   }
 }

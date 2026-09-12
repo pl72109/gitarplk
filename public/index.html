@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GITARPLK - Interactive Tab Player</title>
     <link rel="stylesheet" href="style.css">
+
+    <!--
+      AlphaTab, served from node_modules via the /vendor/alphatab mount in
+      server.js. This is the self-contained UMD bundle: it exposes the global
+      `alphaTab` and spawns its own layout worker and audio worklet from this
+      same URL, so no bundler is required.
+
+      It is a classic (non-module) script so it is guaranteed to have run
+      before app.js, which is a deferred module.
+    -->
+    <script src="/vendor/alphatab/alphaTab.min.js"></script>
+    <script type="module" src="app.js"></script>
 </head>
 <body>
-    <!-- Top Player Controls Bar -->
+    <!-- Top bar: branding, song meta, library actions -->
     <header class="player-topbar">
         <div class="brand">
             <span class="logo">GITARPLK</span>
-            <span class="tagline">Songsterr Engine</span>
-        </div>
-
-        <div class="controls-main">
-            <button id="btn-play-pause" class="btn-play">▶ PLAY</button>
-            
-            <div class="bpm-control">
-                <label for="bpm-input">BPM:</label>
-                <input type="number" id="bpm-input" value="116" min="40" max="240">
-                <input type="range" id="bpm-slider" min="40" max="240" value="116">
-            </div>
-
-            <div class="track-picker" id="track-selector"></div>
+            <span class="tagline">AlphaTab Engine</span>
         </div>
 
         <div class="topbar-actions">
-            <button id="btn-open-modal" class="btn-accent">+ Add Song & Preset</button>
+            <button id="btn-toggle-mixer" class="btn-ghost" title="Toggle mixer">🎚 Mixer</button>
+            <button id="btn-open-modal" class="btn-accent">+ Add Song</button>
         </div>
     </header>
 
@@ -51,7 +52,7 @@
                     <span id="display-status" class="status-badge">Approved</span>
                 </div>
 
-                <!-- Rig & Preset Inspector -->
+                <!-- Rig & Preset Inspector (project metadata, not AlphaTab) -->
                 <div class="rig-inspector">
                     <div class="rig-card">
                         <div class="card-label">AMP HEAD</div>
@@ -73,11 +74,13 @@
                 </div>
             </div>
 
-            <!-- Tab Canvas Display Engine -->
+            <!--
+              AlphaTab's scroll container and render surface.
+              #tab-viewport is passed to AlphaTab as `player.scrollElement`, so
+              it auto-scrolls to keep the playback cursor in view.
+            -->
             <div id="tab-viewport" class="tab-viewport hidden">
-                <div id="tab-canvas" class="tab-canvas">
-                    <!-- Dynamic rendered lines & cursor -->
-                </div>
+                <div id="alphatab-surface" class="alphatab-surface"></div>
             </div>
 
             <div id="empty-workspace" class="empty-state">
@@ -86,9 +89,67 @@
                 <p>Choose a song from the directory on the left or add a new tab.</p>
             </div>
         </main>
+
+        <!-- Mixer drawer -->
+        <aside id="mixer-panel" class="mixer-panel">
+            <div class="mixer-header">
+                <h3>Mixer</h3>
+                <span id="mixer-count" class="mixer-count">0 tracks</span>
+            </div>
+            <div id="mixer-list" class="mixer-list"></div>
+            <div class="mixer-legend">
+                <span><b>◉</b> show in score</span>
+                <span><b>M</b> mute</span>
+                <span><b>S</b> solo</span>
+            </div>
+        </aside>
     </div>
 
-    <!-- Modal: Add Song & Preset Editor -->
+    <!-- Transport bar, pinned to the bottom of the viewport -->
+    <footer id="transport-bar" class="transport-bar is-loading">
+        <div class="tp-group tp-transport">
+            <button id="tp-play-pause" class="tp-play" aria-label="Play" disabled>▶</button>
+            <button id="tp-stop" class="tp-btn" aria-label="Stop" title="Stop" disabled>■</button>
+        </div>
+
+        <div class="tp-group tp-seek">
+            <span id="tp-time-current" class="tp-time">0:00</span>
+            <div class="tp-progress-wrap">
+                <div class="tp-progress-track">
+                    <div id="tp-progress-fill" class="tp-progress-fill"></div>
+                </div>
+                <!-- Native range input layered on top: free keyboard + a11y support -->
+                <input id="tp-progress" class="tp-progress" type="range"
+                       min="0" max="1000" value="0" step="1"
+                       aria-label="Playback position" disabled>
+            </div>
+            <span id="tp-time-total" class="tp-time">0:00</span>
+        </div>
+
+        <div class="tp-group tp-speed-group">
+            <label for="tp-speed" class="tp-label">Speed</label>
+            <input id="tp-speed" type="range" min="50" max="150" step="5" value="100">
+            <span id="tp-speed-label" class="tp-value">100%</span>
+        </div>
+
+        <div class="tp-group tp-zoom-group">
+            <label class="tp-label">Zoom</label>
+            <button id="tp-zoom-out" class="tp-btn" title="Zoom out">−</button>
+            <span id="tp-zoom-label" class="tp-value">100%</span>
+            <button id="tp-zoom-in" class="tp-btn" title="Zoom in">+</button>
+        </div>
+
+        <div class="tp-group tp-toggles">
+            <button id="tp-metronome" class="tp-btn" title="Metronome">🎵</button>
+            <button id="tp-loop" class="tp-btn" title="Loop">🔁</button>
+        </div>
+
+        <div class="tp-group tp-status-group">
+            <span id="tp-status" class="tp-status">Idle</span>
+        </div>
+    </footer>
+
+    <!-- Modal: Add Song -->
     <div id="add-song-modal" class="modal-overlay hidden">
         <div class="modal-window">
             <div class="modal-header">
@@ -99,26 +160,26 @@
             <div class="modal-tabs">
                 <button class="tab-btn active" data-tab="tab-info">1. Song Details</button>
                 <button class="tab-btn" data-tab="tab-rig">2. Rig & Presets</button>
-                <button class="tab-btn" data-tab="tab-editor">3. Interactive Tab Editor</button>
+                <button class="tab-btn" data-tab="tab-score">3. Score</button>
             </div>
 
             <div class="modal-body">
                 <!-- Tab 1: Info -->
                 <div id="tab-info" class="tab-content active">
                     <div class="form-row">
-                        <label>Artist Name</label>
+                        <label for="new-artist">Artist Name</label>
                         <input type="text" id="new-artist" placeholder="e.g. Nirvana">
                     </div>
                     <div class="form-row">
-                        <label>Song Title</label>
+                        <label for="new-title">Song Title</label>
                         <input type="text" id="new-title" placeholder="e.g. Smells Like Teen Spirit">
                     </div>
                     <div class="form-row">
-                        <label>Tempo (BPM)</label>
+                        <label for="new-bpm">Tempo (BPM)</label>
                         <input type="number" id="new-bpm" value="120">
                     </div>
                     <div class="form-row">
-                        <label>Instrument</label>
+                        <label for="new-instrument">Instrument</label>
                         <select id="new-instrument">
                             <option value="Guitar">Guitar (6 Strings)</option>
                             <option value="Bass">Bass (4 Strings)</option>
@@ -129,15 +190,15 @@
                 <!-- Tab 2: Rig & Presets -->
                 <div id="tab-rig" class="tab-content">
                     <div class="form-row">
-                        <label>Preset Name</label>
+                        <label for="new-preset-name">Preset Name</label>
                         <input type="text" id="new-preset-name" placeholder="e.g. Heavy Distortion / High Gain">
                     </div>
                     <div class="form-row">
-                        <label>Tuning</label>
+                        <label for="new-tuning">Tuning</label>
                         <input type="text" id="new-tuning" value="Standard (E A D G B E)">
                     </div>
                     <div class="form-row">
-                        <label>Amp Model Name</label>
+                        <label for="new-amp-model">Amp Model Name</label>
                         <input type="text" id="new-amp-model" value="Custom Tube Amp">
                     </div>
                     <div class="form-row">
@@ -150,18 +211,73 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <label>Pedals Chain (comma separated)</label>
+                        <label for="new-pedal-name">Pedals Chain (comma separated)</label>
                         <input type="text" id="new-pedal-name" placeholder="e.g. Boss DS-1, Ibanez Tube Screamer">
                     </div>
                 </div>
 
-                <!-- Tab 3: Tab Editor -->
-                <div id="tab-editor" class="tab-content">
-                    <div class="tab-toolbar">
-                        <button id="btn-insert-bar" class="sm-btn">Insert Bar (|)</button>
-                        <button id="btn-insert-template" class="sm-btn">Load Blank Tab Template</button>
+                <!-- Tab 3: Score source -->
+                <div id="tab-score" class="tab-content">
+                    <div class="format-switch">
+                        <label class="format-option">
+                            <input type="radio" name="score-format" value="gp" checked>
+                            <span class="format-pill">
+                                <b>Guitar Pro</b>
+                                <small>Best quality — real rhythms &amp; effects</small>
+                            </span>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="score-format" value="alphatex">
+                            <span class="format-pill">
+                                <b>alphaTex</b>
+                                <small>Text notation with proper durations</small>
+                            </span>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="score-format" value="ascii">
+                            <span class="format-pill">
+                                <b>ASCII Tab</b>
+                                <small>Legacy — rhythm is approximated</small>
+                            </span>
+                        </label>
                     </div>
-                    <textarea id="new-tab-text" spellcheck="false" placeholder="Write or paste your ASCII tablature here..."></textarea>
+
+                    <!-- Guitar Pro upload -->
+                    <div class="format-pane active" data-format="gp">
+                        <div id="gp-dropzone" class="dropzone">
+                            <div class="dropzone-icon">📄</div>
+                            <div class="dropzone-text">Drop a Guitar Pro file here, or click to browse</div>
+                            <div class="dropzone-hint">.gp3 · .gp4 · .gp5 · .gpx · .gp · .musicxml</div>
+                            <div id="gp-file-name" class="dropzone-file">No file chosen</div>
+                        </div>
+                        <input type="file" id="gp-file" accept=".gp,.gp3,.gp4,.gp5,.gpx,.musicxml,.xml" hidden>
+                    </div>
+
+                    <!-- alphaTex editor -->
+                    <div class="format-pane" data-format="alphatex">
+                        <p class="pane-hint">
+                            alphaTex is AlphaTab's text format. <code>3.5.8</code> means fret 3,
+                            string 5, eighth note. Parentheses group a chord.
+                        </p>
+                        <textarea id="new-alphatex" spellcheck="false" placeholder='\title "My Song"
+\tempo 120
+.
+(3.5 3.4).8 (3.5 3.4).8 r.8 3.5.8 | 5.5.4 3.5.4 0.6.2'></textarea>
+                    </div>
+
+                    <!-- Legacy ASCII editor -->
+                    <div class="format-pane" data-format="ascii">
+                        <div class="tab-toolbar">
+                            <button id="btn-insert-bar" class="sm-btn">Insert Bar (|)</button>
+                            <button id="btn-insert-template" class="sm-btn">Load Blank Tab Template</button>
+                        </div>
+                        <textarea id="new-tab-text" spellcheck="false" placeholder="Write or paste your ASCII tablature here..."></textarea>
+                        <p class="pane-hint warn">
+                            ASCII tab has no rhythm information. Notes are snapped to a 16th-note
+                            grid based on their horizontal spacing, so playback timing is an
+                            approximation.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -171,7 +287,5 @@
             </div>
         </div>
     </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
