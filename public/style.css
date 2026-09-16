@@ -657,6 +657,355 @@ input[type="range"]:not(.tp-progress)::-moz-range-thumb {
 #btn-cancel-modal { background: #282c34; color: #ccc; }
 
 /* ==================================================================
+   Song directory extras
+   ================================================================== */
+.artist-filters { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.artist-chip {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.artist-chip:hover { color: var(--text); border-color: var(--border-strong); }
+.artist-chip.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.song-list .s-tuning { font-size: 10px; color: var(--text-faint); display: block; margin-top: 2px; }
+.list-empty { padding: 20px 15px; font-size: 12px; color: var(--text-faint); text-align: center; }
+
+.badge-needs-score {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #3a2f10;
+    color: #d8b13a;
+    white-space: nowrap;
+}
+
+.status-badge.status-needs-score { background: #3a2f10; color: #d8b13a; }
+.status-badge.status-pending     { background: #2b2b34; color: var(--text-dim); }
+
+/* ==================================================================
+   Rig inspector extras
+   ================================================================== */
+.meta-chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.meta-chip {
+    font-size: 10px;
+    color: var(--text-dim);
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+.card-sub { font-size: 10px; color: var(--text-faint); margin-top: 8px; }
+
+.pedals-list .pedal-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+.pedals-list .pedal-name { font-size: 12px; color: #fff; }
+.pedals-list .pedal-type {
+    font-size: 9px;
+    color: var(--text-faint);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 4px;
+}
+.pedals-list .pedal-knobs-summary { font-size: 10px; color: var(--text-faint); }
+
+.rig-notes {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    border-left: 2px solid var(--border-strong);
+    padding-left: 10px;
+}
+
+/* ==================================================================
+   Mixer: guitar-only notice
+   ================================================================== */
+.mixer-notice {
+    margin: 8px;
+    padding: 7px 9px;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #d8b13a;
+    background: #23200f;
+    border: 1px solid #3a3312;
+    border-radius: 4px;
+}
+
+/* ==================================================================
+   Add Song dashboard
+   ================================================================== */
+.modal-window.wide { max-width: 1000px; width: 94vw; }
+.modal-header { align-items: flex-start; }
+.modal-sub { font-size: 11px; color: var(--text-faint); margin-top: 3px; }
+
+/* ---- Step rail ------------------------------------------------- */
+.step-rail {
+    display: flex;
+    list-style: none;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--border);
+}
+.step-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: 0.15s;
+}
+.step-item:hover { background: var(--bg-panel); }
+.step-item.active { background: var(--bg-panel); border-bottom-color: var(--accent); }
+.step-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-strong);
+    color: var(--text-dim);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.step-item.active .step-num { background: var(--accent); border-color: var(--accent); color: #000; }
+.step-item.done .step-num { background: var(--green); border-color: var(--green); color: #fff; }
+.step-text { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+.step-text b { font-size: 12px; color: var(--text); }
+.step-text small { font-size: 10px; color: var(--text-faint); }
+
+/* ---- Form layout ----------------------------------------------- */
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0 14px;
+}
+.form-row.narrow { max-width: 150px; }
+.form-row textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 10px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+}
+.form-row textarea:focus { outline: none; border-color: var(--blue); }
+.field-hint { font-size: 10px; color: var(--text-faint); margin-top: 5px; }
+.field-hint code { background: var(--bg-input); padding: 1px 5px; border-radius: 3px; color: #26a69a; }
+.req { color: var(--red); }
+
+.guitar-only-note {
+    margin-top: 6px;
+    padding: 9px 11px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+/* ---- Rig editor ------------------------------------------------ */
+.rig-editor { display: grid; grid-template-columns: 1fr 230px; gap: 18px; align-items: start; }
+.rig-editor-main { min-width: 0; }
+
+.panel-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+.panel-hint { font-size: 10px; font-weight: 400; color: var(--text-faint); text-transform: none; letter-spacing: 0; }
+
+.amp-panel, .pedal-panel {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 13px;
+    margin-bottom: 14px;
+}
+
+.amp-knobs { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; }
+.knob-control { display: flex; flex-direction: column; gap: 3px; }
+.knob-control label { font-size: 10px; color: var(--text-dim); font-weight: 600; }
+.knob-control input[type="range"] { width: 100%; accent-color: var(--accent); }
+.knob-control output {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: right;
+}
+
+/* ---- Pedalboard ------------------------------------------------ */
+.pedal-picker { position: relative; display: flex; gap: 8px; margin-bottom: 12px; }
+.pedal-picker input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    font-size: 12px;
+}
+.pedal-picker input:focus { outline: none; border-color: var(--blue); }
+
+.pedal-suggestions {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 130px;
+    z-index: 20;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    max-height: 230px;
+    overflow-y: auto;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+.pedal-suggestions.open { display: block; }
+.pedal-suggestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 11px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    text-align: left;
+}
+.pedal-suggestion:last-child { border-bottom: none; }
+.pedal-suggestion:hover { background: #1c2027; }
+.ps-name { font-size: 12px; color: var(--text); }
+.ps-type { font-size: 9px; color: var(--text-faint); white-space: nowrap; }
+
+.pedal-chain { display: flex; flex-direction: column; gap: 9px; }
+.pedal-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+}
+.pedal-card-head { display: flex; align-items: center; gap: 8px; }
+.pedal-index {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--bg-input);
+    color: var(--text-faint);
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pedal-card .pedal-model { flex: 1; min-width: 0; }
+.pedal-card input, .pedal-card select {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.pedal-card input:focus, .pedal-card select:focus { outline: none; border-color: var(--blue); }
+.pedal-card .pedal-type { flex-shrink: 0; width: 120px; }
+.pedal-card-actions { display: flex; gap: 3px; flex-shrink: 0; }
+
+.icon-btn {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+}
+.icon-btn:hover:not(:disabled) { color: #fff; border-color: var(--text-faint); }
+.icon-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.icon-btn.danger:hover:not(:disabled) { background: var(--red); border-color: var(--red); color: #fff; }
+
+.pedal-knobs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.pedal-knob-row { display: flex; gap: 4px; align-items: center; }
+.pedal-knob-row .pk-name { width: 90px; }
+.pedal-knob-row .pk-value { width: 70px; }
+
+.sm-btn.ghost { background: none; border: 1px dashed var(--border-strong); color: var(--text-faint); margin-top: 8px; }
+.sm-btn.ghost:hover { background: var(--bg-input); color: var(--text-dim); }
+
+/* ---- Live rig preview ------------------------------------------ */
+.rig-preview { position: sticky; top: 0; }
+.preview-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: var(--text-faint);
+    margin-bottom: 8px;
+}
+.preview-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 11px;
+    margin-bottom: 9px;
+}
+
+/* ---- Rig-only pane --------------------------------------------- */
+.rig-only-note {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.rig-only-note h3 { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+.rig-only-note p { font-size: 12px; color: var(--text-faint); line-height: 1.6; max-width: 420px; margin: 0 auto; }
+
+/* ---- Footer ---------------------------------------------------- */
+.modal-footer { justify-content: space-between; align-items: center; }
+.footer-actions { display: flex; gap: 10px; margin-left: auto; }
+.form-error {
+    font-size: 12px;
+    color: #ff8a80;
+    background: #2b1416;
+    border: 1px solid #5c2126;
+    border-radius: var(--radius);
+    padding: 7px 11px;
+}
+.modal-footer .btn-ghost { padding: 9px 14px; }
+.modal-footer button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ==================================================================
    Responsive
    ================================================================== */
 @media (max-width: 1200px) {
@@ -664,14 +1013,22 @@ input[type="range"]:not(.tp-progress)::-moz-range-thumb {
     .rig-inspector { flex-wrap: wrap; }
 }
 
+@media (max-width: 1000px) {
+    .rig-editor { grid-template-columns: 1fr; }
+    .rig-preview { position: static; }
+}
+
 @media (max-width: 900px) {
     .sidebar { width: 210px; }
     .mixer-panel { position: fixed; right: 0; top: 56px; bottom: var(--transport-h); z-index: 40; }
     .tp-zoom-group, .tp-status-group { display: none; }
+    .step-text small { display: none; }
 }
 
 @media (max-width: 640px) {
     :root { --transport-h: 56px; }
     .tp-speed-group, .tp-toggles { display: none; }
     .sidebar { width: 160px; }
+    .pedal-card-head { flex-wrap: wrap; }
+    .pedal-card .pedal-type { width: 100%; }
 }

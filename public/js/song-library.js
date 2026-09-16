@@ -1,9 +1,14 @@
 /**
- * Song directory: the sidebar list, the search filter, the rig inspector
- * panel, and the "add song" modal.
+ * Song directory: the sidebar list, the search and artist filters, and the rig
+ * inspector panel.
  *
  * Knows nothing about AlphaTab - it hands whole song records to the callback
- * passed into `onSelect` and lets app.js wire that to the player.
+ * passed into `onSelect` and lets app.js wire that to the player. The "Add
+ * Song" modal is a separate component (ui-add-song.js); this class only tells
+ * it when to open and reloads the list once it saves.
+ *
+ * Guitar only: a song record carries one guitar arrangement and one rig, so
+ * the inspector reads `song.rig` directly rather than walking a track list.
  */
 
 export class SongLibrary {
@@ -11,46 +16,98 @@ export class SongLibrary {
     this.songs = [];
     this.currentSong = null;
     this.onSelect = onSelect;
+    this.artistFilter = null;
 
     this.els = {
       list: document.getElementById('song-list'),
       search: document.getElementById('song-search'),
+      artistFilters: document.getElementById('artist-filters'),
       emptyState: document.getElementById('empty-workspace'),
+      noScoreState: document.getElementById('no-score-state'),
       metaPanel: document.getElementById('song-meta-panel'),
       viewport: document.getElementById('tab-viewport'),
 
       title: document.getElementById('display-title'),
       artist: document.getElementById('display-artist'),
       status: document.getElementById('display-status'),
+      album: document.getElementById('display-album'),
+      difficulty: document.getElementById('display-difficulty'),
+      bpm: document.getElementById('display-bpm'),
 
       ampTitle: document.getElementById('rig-amp-title'),
       ampKnobs: document.getElementById('rig-amp-knobs'),
+      cab: document.getElementById('rig-cab'),
       pedalsList: document.getElementById('rig-pedals-list'),
       tuning: document.getElementById('rig-tuning'),
+      capo: document.getElementById('rig-capo'),
       presetName: document.getElementById('rig-preset-name'),
+      guitar: document.getElementById('rig-guitar'),
+      notes: document.getElementById('rig-notes'),
     };
 
-    this.els.search.addEventListener('input', () => this._applyFilter());
-    this._bindModal();
+    this.els.search.addEventListener('input', () => this._renderList());
   }
 
   async load() {
     const response = await fetch('/api/songs');
     this.songs = await response.json();
-    this._renderList(this.songs);
+    this._renderArtistFilters();
+    this._renderList();
   }
 
-  _applyFilter() {
+  /** Distinct artists in the catalogue, for the quick-filter chips. */
+  artists() {
+    return [...new Set(this.songs.map((s) => s.artist))].sort();
+  }
+
+  _renderArtistFilters() {
+    const artists = this.artists();
+    this.els.artistFilters.innerHTML = '';
+
+    const makeChip = (label, value) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'artist-chip';
+      chip.textContent = label;
+      chip.classList.toggle('active', this.artistFilter === value);
+      chip.addEventListener('click', () => {
+        this.artistFilter = this.artistFilter === value ? null : value;
+        this._renderArtistFilters();
+        this._renderList();
+      });
+      this.els.artistFilters.appendChild(chip);
+    };
+
+    makeChip(`All (${this.songs.length})`, null);
+    artists.forEach((artist) => {
+      const count = this.songs.filter((s) => s.artist === artist).length;
+      makeChip(`${artist} (${count})`, artist);
+    });
+  }
+
+  /** Songs matching both the text search and the active artist chip. */
+  _visibleSongs() {
     const query = this.els.search.value.toLowerCase();
-    const filtered = this.songs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
-    );
-    this._renderList(filtered);
+    return this.songs.filter((song) => {
+      if (this.artistFilter && song.artist !== this.artistFilter) return false;
+      if (!query) return true;
+      return (
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query) ||
+        (song.album || '').toLowerCase().includes(query) ||
+        (song.tuning || '').toLowerCase().includes(query)
+      );
+    });
   }
 
-  _renderList(items) {
+  _renderList() {
+    const items = this._visibleSongs();
     this.els.list.innerHTML = '';
+
+    if (items.length === 0) {
+      this.els.list.innerHTML = '<li class="list-empty">No songs match that filter.</li>';
+      return;
+    }
 
     items.forEach((song) => {
       const li = document.createElement('li');
@@ -61,10 +118,11 @@ export class SongLibrary {
         <div class="s-info">
           <span class="s-title">${escapeHtml(song.title)}</span>
           <span class="s-artist">${escapeHtml(song.artist)}</span>
+          <span class="s-tuning">${escapeHtml(song.tuning || '')}</span>
         </div>
         <div class="s-tags">
           <span class="badge-format">${formatLabel(song)}</span>
-          ${song.status === 'pending' ? '<span class="badge-pending">Pending</span>' : ''}
+          ${statusBadge(song.status)}
         </div>
       `;
 
@@ -78,208 +136,88 @@ export class SongLibrary {
     if (!song) return;
 
     this.currentSong = song;
-    this._renderList(this._currentFilterResults());
+    this._renderList();
     this._showSong(song);
-    this.onSelect(song);
-  }
 
-  _currentFilterResults() {
-    const query = this.els.search.value.toLowerCase();
-    return this.songs.filter(
-      (song) =>
-        song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
-    );
+    // A catalogue entry with no attached score has a rig to show but nothing
+    // to render, so the player is not invoked at all.
+    if (hasPlayableScore(song)) {
+      this.onSelect(song);
+    }
   }
 
   _showSong(song) {
     const { els } = this;
+    const playable = hasPlayableScore(song);
+
     els.emptyState.classList.add('hidden');
     els.metaPanel.classList.remove('hidden');
-    els.viewport.classList.remove('hidden');
+    els.viewport.classList.toggle('hidden', !playable);
+    els.noScoreState.classList.toggle('hidden', playable);
 
     els.title.textContent = song.title;
     els.artist.textContent = song.artist;
-    els.status.textContent = (song.status || 'approved').toUpperCase();
+    els.status.textContent = (song.status || 'approved').replace('-', ' ').toUpperCase();
+    els.status.className = `status-badge status-${song.status || 'approved'}`;
 
-    // The rig inspector still reflects the first track's gear. AlphaTab does
-    // not model amps or pedals, so this stays project metadata.
-    const track = (song.tracks && song.tracks[0]) || {};
-    els.tuning.textContent = track.tuning || '—';
-    els.presetName.textContent = track.preset || '—';
-    els.ampTitle.textContent = track.amp ? track.amp.model : 'Standard Amp';
+    setChip(els.album, song.album && song.year ? `${song.album} · ${song.year}` : song.album);
+    setChip(els.difficulty, song.difficulty);
+    setChip(els.bpm, song.bpm ? `${song.bpm} BPM` : '');
+
+    // AlphaTab does not model amps or pedals, so the rig stays project
+    // metadata rendered from the song record.
+    const rig = song.rig || {};
+    els.tuning.textContent = song.tuning || '—';
+    els.capo.textContent = song.capo ? `Fret ${song.capo}` : 'None';
+    els.presetName.textContent = rig.preset || '—';
+    els.guitar.textContent = rig.guitar || '—';
+    els.ampTitle.textContent = (rig.amp && rig.amp.model) || 'Standard Amp';
+    els.cab.textContent = rig.cab || '';
 
     els.ampKnobs.innerHTML = '';
-    if (track.amp && track.amp.settings) {
-      for (const [knob, value] of Object.entries(track.amp.settings)) {
-        const unit = document.createElement('div');
-        unit.className = 'knob-unit';
-        unit.innerHTML = `<span>${escapeHtml(knob)}</span><strong>${escapeHtml(value)}</strong>`;
-        els.ampKnobs.appendChild(unit);
-      }
+    const settings = (rig.amp && rig.amp.settings) || {};
+    for (const [knob, value] of Object.entries(settings)) {
+      const unit = document.createElement('div');
+      unit.className = 'knob-unit';
+      unit.innerHTML = `<span>${escapeHtml(knob)}</span><strong>${escapeHtml(value)}</strong>`;
+      els.ampKnobs.appendChild(unit);
     }
 
     els.pedalsList.innerHTML = '';
-    if (track.pedals && track.pedals.length) {
-      track.pedals.forEach((pedal) => {
+    if (rig.pedals && rig.pedals.length) {
+      rig.pedals.forEach((pedal) => {
         const row = document.createElement('div');
         row.className = 'pedal-row';
-        row.textContent = `• ${pedal.model}`;
+        const knobs = Object.entries(pedal.settings || {})
+          .map(([knob, value]) => `${knob} ${value}`)
+          .join(' · ');
+        row.innerHTML = `
+          <span class="pedal-name">${escapeHtml(pedal.model)}</span>
+          <span class="pedal-type">${escapeHtml(pedal.type || '')}</span>
+          ${knobs ? `<span class="pedal-knobs-summary">${escapeHtml(knobs)}</span>` : ''}
+        `;
         els.pedalsList.appendChild(row);
       });
     } else {
       els.pedalsList.innerHTML = '<span class="muted-note">No Pedals Active</span>';
     }
-  }
 
-  /* ------------------------------------------------------------------ *
-   * Add-song modal
-   * ------------------------------------------------------------------ */
-
-  _bindModal() {
-    const modal = document.getElementById('add-song-modal');
-    const open = () => modal.classList.remove('hidden');
-    const close = () => modal.classList.add('hidden');
-
-    document.getElementById('btn-open-modal').addEventListener('click', open);
-    document.getElementById('btn-close-modal').addEventListener('click', close);
-    document.getElementById('btn-cancel-modal').addEventListener('click', close);
-
-    // Modal tab navigation
-    document.querySelectorAll('.tab-btn').forEach((button) => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach((c) => c.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-
-    // Score-format switcher inside the modal
-    const formatRadios = document.querySelectorAll('input[name="score-format"]');
-    formatRadios.forEach((radio) => {
-      radio.addEventListener('change', () => {
-        document.querySelectorAll('.format-pane').forEach((pane) => {
-          pane.classList.toggle('active', pane.dataset.format === radio.value);
-        });
-      });
-    });
-
-    // Guitar Pro drop zone
-    const dropZone = document.getElementById('gp-dropzone');
-    const fileInput = document.getElementById('gp-file');
-    const fileLabel = document.getElementById('gp-file-name');
-
-    dropZone.addEventListener('click', () => fileInput.click());
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('dragging');
-    });
-    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragging'));
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('dragging');
-      if (e.dataTransfer.files.length) {
-        fileInput.files = e.dataTransfer.files;
-        fileLabel.textContent = e.dataTransfer.files[0].name;
-      }
-    });
-    fileInput.addEventListener('change', () => {
-      fileLabel.textContent = fileInput.files.length ? fileInput.files[0].name : 'No file chosen';
-    });
-
-    // ASCII helpers, carried over from the original editor
-    document.getElementById('btn-insert-template').addEventListener('click', () => {
-      document.getElementById('new-tab-text').value =
-        'e|---------------------------------|---------------------------------|\n' +
-        'B|---------------------------------|---------------------------------|\n' +
-        'G|---------------------------------|---------------------------------|\n' +
-        'D|---------------------------------|---------------------------------|\n' +
-        'A|---------------------------------|---------------------------------|\n' +
-        'E|---------------------------------|---------------------------------|';
-    });
-
-    document.getElementById('btn-insert-bar').addEventListener('click', () => {
-      document.getElementById('new-tab-text').value += '|\n';
-    });
-
-    document.getElementById('btn-submit-song').addEventListener('click', () => {
-      this._submit(close);
-    });
-  }
-
-  async _submit(onDone) {
-    const value = (id) => document.getElementById(id).value.trim();
-    const format = document.querySelector('input[name="score-format"]:checked').value;
-
-    const artist = value('new-artist');
-    const title = value('new-title');
-    if (!artist || !title) return alert('Please fill in Artist and Title.');
-
-    const meta = {
-      title,
-      artist,
-      bpm: parseInt(value('new-bpm'), 10) || 120,
-      tracks: [
-        {
-          instrument: value('new-instrument') || 'Guitar',
-          tuning: value('new-tuning'),
-          preset: value('new-preset-name') || 'Custom Preset',
-          amp: {
-            model: value('new-amp-model') || 'Tube Amp',
-            settings: {
-              Gain: parseInt(value('amp-g'), 10) || 5,
-              Bass: parseInt(value('amp-b'), 10) || 5,
-              Mid: parseInt(value('amp-m'), 10) || 5,
-              Treble: parseInt(value('amp-t'), 10) || 5,
-            },
-          },
-          pedals: value('new-pedal-name')
-            .split(',')
-            .map((name) => name.trim())
-            .filter(Boolean)
-            .map((model) => ({ model, settings: {} })),
-        },
-      ],
-    };
-
-    let response;
-
-    if (format === 'gp') {
-      // Guitar Pro files go up as multipart so the bytes stay intact.
-      const fileInput = document.getElementById('gp-file');
-      if (!fileInput.files.length) return alert('Please choose a Guitar Pro file.');
-
-      const body = new FormData();
-      body.append('score', fileInput.files[0]);
-      body.append('meta', JSON.stringify(meta));
-      response = await fetch('/api/songs', { method: 'POST', body });
+    if (rig.notes) {
+      els.notes.textContent = rig.notes;
+      els.notes.classList.remove('hidden');
     } else {
-      const payload = { ...meta };
-      if (format === 'alphatex') {
-        const tex = document.getElementById('new-alphatex').value;
-        if (!tex.trim()) return alert('Please enter some alphaTex.');
-        payload.source = { format: 'alphatex', data: tex };
-      } else {
-        const tab = document.getElementById('new-tab-text').value;
-        if (!tab.trim()) return alert('Please enter some tablature.');
-        payload.source = { format: 'ascii' };
-        payload.tracks[0].tab = tab;
-      }
-      response = await fetch('/api/songs', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      els.notes.classList.add('hidden');
     }
-
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({}));
-      return alert(`Could not save: ${error.error || response.status}`);
-    }
-
-    onDone();
-    await this.load();
   }
+}
+
+/** True when the song has something AlphaTab can actually render. */
+export function hasPlayableScore(song) {
+  const format = song.source && song.source.format;
+  if (format === 'gp') return Boolean(song.source.file);
+  if (format === 'alphatex') return Boolean(song.source.data);
+  if (format === 'ascii') return Boolean(song.tab);
+  return false;
 }
 
 /** Small badge showing which importer a song will go through. */
@@ -287,11 +225,23 @@ function formatLabel(song) {
   const format = song.source && song.source.format;
   if (format === 'gp') return 'GP';
   if (format === 'alphatex') return 'TEX';
-  return 'ASCII';
+  if (format === 'ascii') return 'ASCII';
+  return 'RIG';
+}
+
+function statusBadge(status) {
+  if (status === 'pending') return '<span class="badge-pending">Pending</span>';
+  if (status === 'needs-score') return '<span class="badge-needs-score">Needs score</span>';
+  return '';
+}
+
+function setChip(element, text) {
+  element.textContent = text || '';
+  element.classList.toggle('hidden', !text);
 }
 
 function escapeHtml(text) {
-  return String(text).replace(
+  return String(text ?? '').replace(
     /[&<>"']/g,
     (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]
   );

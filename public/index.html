@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GITARPLK - Interactive Tab Player</title>
+    <title>GITARPLK - Interactive Guitar Tab Player</title>
     <link rel="stylesheet" href="style.css">
 
     <!--
@@ -23,7 +23,7 @@
     <header class="player-topbar">
         <div class="brand">
             <span class="logo">GITARPLK</span>
-            <span class="tagline">AlphaTab Engine</span>
+            <span class="tagline">Guitar Tabs &amp; Rigs</span>
         </div>
 
         <div class="topbar-actions">
@@ -38,6 +38,7 @@
             <div class="sidebar-header">
                 <h3>Song Directory</h3>
                 <input type="text" id="song-search" placeholder="Filter songs or artists...">
+                <div id="artist-filters" class="artist-filters"></div>
             </div>
             <ul id="song-list" class="song-list"></ul>
         </aside>
@@ -49,29 +50,41 @@
                 <div class="meta-title-group">
                     <h1 id="display-title">Select Song</h1>
                     <h3 id="display-artist">Artist</h3>
-                    <span id="display-status" class="status-badge">Approved</span>
+                    <div class="meta-chips">
+                        <span id="display-status" class="status-badge">Approved</span>
+                        <span id="display-album" class="meta-chip"></span>
+                        <span id="display-difficulty" class="meta-chip"></span>
+                        <span id="display-bpm" class="meta-chip"></span>
+                    </div>
                 </div>
 
                 <!-- Rig & Preset Inspector (project metadata, not AlphaTab) -->
                 <div class="rig-inspector">
                     <div class="rig-card">
                         <div class="card-label">AMP HEAD</div>
-                        <div id="rig-amp-title" class="card-title">Mesa Boogie</div>
+                        <div id="rig-amp-title" class="card-title">—</div>
                         <div id="rig-amp-knobs" class="knobs-grid"></div>
+                        <div id="rig-cab" class="card-sub"></div>
                     </div>
 
                     <div class="rig-card">
-                        <div class="card-label">PEDALS & EFFECTS</div>
+                        <div class="card-label">PEDALS &amp; EFFECTS</div>
                         <div id="rig-pedals-list" class="pedals-list"></div>
                     </div>
 
                     <div class="rig-card compact">
                         <div class="card-label">TUNING</div>
-                        <div id="rig-tuning" class="card-val">Standard E</div>
+                        <div id="rig-tuning" class="card-val">—</div>
+                        <div class="card-label margin-top">CAPO</div>
+                        <div id="rig-capo" class="card-val">None</div>
                         <div class="card-label margin-top">PRESET</div>
-                        <div id="rig-preset-name" class="card-val">Grunge</div>
+                        <div id="rig-preset-name" class="card-val">—</div>
+                        <div class="card-label margin-top">GUITAR</div>
+                        <div id="rig-guitar" class="card-val">—</div>
                     </div>
                 </div>
+
+                <p id="rig-notes" class="rig-notes hidden"></p>
             </div>
 
             <!--
@@ -81,6 +94,17 @@
             -->
             <div id="tab-viewport" class="tab-viewport hidden">
                 <div id="alphatab-surface" class="alphatab-surface"></div>
+            </div>
+
+            <!-- Catalogue entries that carry a rig but no playable score yet -->
+            <div id="no-score-state" class="empty-state hidden">
+                <div class="empty-icon">📄</div>
+                <h2>Rig ready — no tab file yet</h2>
+                <p>
+                    This entry has its full rig configured but no score attached.
+                    Upload a Guitar Pro file for it to hear and read the tab.
+                </p>
+                <button id="btn-attach-score" class="btn-accent">Upload a tab for this song</button>
             </div>
 
             <div id="empty-workspace" class="empty-state">
@@ -93,9 +117,10 @@
         <!-- Mixer drawer -->
         <aside id="mixer-panel" class="mixer-panel">
             <div class="mixer-header">
-                <h3>Mixer</h3>
-                <span id="mixer-count" class="mixer-count">0 tracks</span>
+                <h3>Guitar Mixer</h3>
+                <span id="mixer-count" class="mixer-count">0 guitar tracks</span>
             </div>
+            <div id="mixer-notice" class="mixer-notice hidden"></div>
             <div id="mixer-list" class="mixer-list"></div>
             <div class="mixer-legend">
                 <span><b>◉</b> show in score</span>
@@ -149,80 +174,186 @@
         </div>
     </footer>
 
-    <!-- Modal: Add Song -->
+    <!-- ============================================================ *
+         Add Song dashboard
+         ============================================================ -->
     <div id="add-song-modal" class="modal-overlay hidden">
-        <div class="modal-window">
+        <div class="modal-window wide">
             <div class="modal-header">
-                <h2>Add Song & Custom Rig Preset</h2>
-                <button id="btn-close-modal" class="close-btn">&times;</button>
+                <div>
+                    <h2>Add a Guitar Tab</h2>
+                    <p class="modal-sub">Song details, the rig it's played through, and the score file.</p>
+                </div>
+                <button id="btn-close-modal" class="close-btn" aria-label="Close">&times;</button>
             </div>
 
-            <div class="modal-tabs">
-                <button class="tab-btn active" data-tab="tab-info">1. Song Details</button>
-                <button class="tab-btn" data-tab="tab-rig">2. Rig & Presets</button>
-                <button class="tab-btn" data-tab="tab-score">3. Score</button>
-            </div>
+            <!-- Step rail -->
+            <ol class="step-rail">
+                <li class="step-item active" data-tab="tab-info">
+                    <span class="step-num">1</span>
+                    <span class="step-text"><b>Song</b><small>Title, tuning, tempo</small></span>
+                </li>
+                <li class="step-item" data-tab="tab-rig">
+                    <span class="step-num">2</span>
+                    <span class="step-text"><b>Rig</b><small>Amp &amp; pedalboard</small></span>
+                </li>
+                <li class="step-item" data-tab="tab-score">
+                    <span class="step-num">3</span>
+                    <span class="step-text"><b>Tab file</b><small>Upload or write</small></span>
+                </li>
+            </ol>
 
             <div class="modal-body">
-                <!-- Tab 1: Info -->
-                <div id="tab-info" class="tab-content active">
-                    <div class="form-row">
-                        <label for="new-artist">Artist Name</label>
-                        <input type="text" id="new-artist" placeholder="e.g. Nirvana">
-                    </div>
-                    <div class="form-row">
-                        <label for="new-title">Song Title</label>
-                        <input type="text" id="new-title" placeholder="e.g. Smells Like Teen Spirit">
-                    </div>
-                    <div class="form-row">
-                        <label for="new-bpm">Tempo (BPM)</label>
-                        <input type="number" id="new-bpm" value="120">
-                    </div>
-                    <div class="form-row">
-                        <label for="new-instrument">Instrument</label>
-                        <select id="new-instrument">
-                            <option value="Guitar">Guitar (6 Strings)</option>
-                            <option value="Bass">Bass (4 Strings)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Tab 2: Rig & Presets -->
-                <div id="tab-rig" class="tab-content">
-                    <div class="form-row">
-                        <label for="new-preset-name">Preset Name</label>
-                        <input type="text" id="new-preset-name" placeholder="e.g. Heavy Distortion / High Gain">
-                    </div>
-                    <div class="form-row">
-                        <label for="new-tuning">Tuning</label>
-                        <input type="text" id="new-tuning" value="Standard (E A D G B E)">
-                    </div>
-                    <div class="form-row">
-                        <label for="new-amp-model">Amp Model Name</label>
-                        <input type="text" id="new-amp-model" value="Custom Tube Amp">
-                    </div>
-                    <div class="form-row">
-                        <label>Amp EQ Settings (Gain, Bass, Mid, Treble)</label>
-                        <div class="inline-inputs">
-                            <input type="number" id="amp-g" placeholder="Gain" value="7">
-                            <input type="number" id="amp-b" placeholder="Bass" value="6">
-                            <input type="number" id="amp-m" placeholder="Mid" value="5">
-                            <input type="number" id="amp-t" placeholder="Treble" value="7">
+                <!-- ---------------- Step 1: song details ---------------- -->
+                <section id="tab-info" class="tab-content active">
+                    <div class="field-grid">
+                        <div class="form-row">
+                            <label for="new-artist">Artist <span class="req">*</span></label>
+                            <input type="text" id="new-artist" list="artist-options"
+                                   placeholder="Start typing — e.g. Alice in Chains" autocomplete="off">
+                            <datalist id="artist-options"></datalist>
+                        </div>
+                        <div class="form-row">
+                            <label for="new-title">Song title <span class="req">*</span></label>
+                            <input type="text" id="new-title" placeholder="e.g. Would?">
+                        </div>
+                        <div class="form-row">
+                            <label for="new-album">Album</label>
+                            <input type="text" id="new-album" placeholder="Optional">
+                        </div>
+                        <div class="form-row narrow">
+                            <label for="new-year">Year</label>
+                            <input type="number" id="new-year" placeholder="1992" min="1900" max="2100">
+                        </div>
+                        <div class="form-row narrow">
+                            <label for="new-bpm">Tempo (BPM)</label>
+                            <input type="number" id="new-bpm" value="120" min="20" max="320">
+                        </div>
+                        <div class="form-row narrow">
+                            <label for="new-difficulty">Difficulty</label>
+                            <select id="new-difficulty">
+                                <option>Beginner</option>
+                                <option selected>Intermediate</option>
+                                <option>Advanced</option>
+                                <option>Expert</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="new-tuning">Tuning</label>
+                            <select id="new-tuning"></select>
+                            <p class="field-hint">
+                                Strings high → low:
+                                <code id="tuning-preview">E4 B3 G3 D3 A2 E2</code>
+                            </p>
+                        </div>
+                        <div class="form-row narrow">
+                            <label for="new-capo">Capo (fret)</label>
+                            <input type="number" id="new-capo" value="0" min="0" max="12">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <label for="new-pedal-name">Pedals Chain (comma separated)</label>
-                        <input type="text" id="new-pedal-name" placeholder="e.g. Boss DS-1, Ibanez Tube Screamer">
-                    </div>
-                </div>
 
-                <!-- Tab 3: Score source -->
-                <div id="tab-score" class="tab-content">
+                    <p class="guitar-only-note">
+                        🎸 GITARPLK is guitar-only. Bass and drum parts in an uploaded file
+                        are filtered out automatically.
+                    </p>
+                </section>
+
+                <!-- ---------------- Step 2: rig ---------------- -->
+                <section id="tab-rig" class="tab-content">
+                    <div class="rig-editor">
+                        <div class="rig-editor-main">
+                            <div class="form-row">
+                                <label for="new-preset-name">Preset name</label>
+                                <input type="text" id="new-preset-name"
+                                       placeholder="e.g. Sludgy Drop-D Rhythm">
+                            </div>
+
+                            <div class="field-grid">
+                                <div class="form-row">
+                                    <label for="new-guitar-model">Guitar</label>
+                                    <input type="text" id="new-guitar-model" list="guitar-options"
+                                           placeholder="e.g. G&amp;L Rampage" autocomplete="off">
+                                    <datalist id="guitar-options"></datalist>
+                                </div>
+                                <div class="form-row">
+                                    <label for="new-amp-model">Amp head</label>
+                                    <input type="text" id="new-amp-model" list="amp-options"
+                                           placeholder="Pick or type a model" autocomplete="off">
+                                    <datalist id="amp-options"></datalist>
+                                </div>
+                                <div class="form-row">
+                                    <label for="new-cab">Cabinet</label>
+                                    <input type="text" id="new-cab" list="cab-options"
+                                           placeholder="Optional" autocomplete="off">
+                                    <datalist id="cab-options"></datalist>
+                                </div>
+                            </div>
+
+                            <div class="amp-panel">
+                                <div class="panel-title">Amp controls</div>
+                                <div id="amp-knobs" class="amp-knobs"></div>
+                            </div>
+
+                            <div class="pedal-panel">
+                                <div class="panel-title">
+                                    Pedalboard
+                                    <span class="panel-hint">Signal chain order, guitar → amp</span>
+                                </div>
+
+                                <div class="pedal-picker">
+                                    <input type="text" id="pedal-search" placeholder="Search pedals to add…"
+                                           autocomplete="off">
+                                    <div id="pedal-suggestions" class="pedal-suggestions"></div>
+                                    <button type="button" id="btn-add-custom-pedal" class="sm-btn">
+                                        + Add custom pedal
+                                    </button>
+                                </div>
+
+                                <div id="pedal-chain" class="pedal-chain"></div>
+                                <p id="pedal-empty" class="muted-note">
+                                    No pedals yet — straight into the amp.
+                                </p>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="new-rig-notes">Tone notes</label>
+                                <textarea id="new-rig-notes" rows="2"
+                                          placeholder="How to dial this in — pickup choice, picking attack, anything worth knowing."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Live preview mirroring the rig inspector -->
+                        <aside class="rig-preview">
+                            <div class="preview-label">LIVE PREVIEW</div>
+                            <div class="preview-card">
+                                <div class="card-label">AMP HEAD</div>
+                                <div id="pv-amp" class="card-title">—</div>
+                                <div id="pv-knobs" class="knobs-grid"></div>
+                                <div id="pv-cab" class="card-sub"></div>
+                            </div>
+                            <div class="preview-card">
+                                <div class="card-label">PEDALS</div>
+                                <div id="pv-pedals" class="pedals-list">
+                                    <span class="muted-note">No Pedals Active</span>
+                                </div>
+                            </div>
+                            <div class="preview-card">
+                                <div class="card-label">TUNING</div>
+                                <div id="pv-tuning" class="card-val">—</div>
+                                <div class="card-label margin-top">PRESET</div>
+                                <div id="pv-preset" class="card-val">—</div>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <!-- ---------------- Step 3: score ---------------- -->
+                <section id="tab-score" class="tab-content">
                     <div class="format-switch">
                         <label class="format-option">
                             <input type="radio" name="score-format" value="gp" checked>
                             <span class="format-pill">
-                                <b>Guitar Pro</b>
+                                <b>Guitar Pro file</b>
                                 <small>Best quality — real rhythms &amp; effects</small>
                             </span>
                         </label>
@@ -236,21 +367,33 @@
                         <label class="format-option">
                             <input type="radio" name="score-format" value="ascii">
                             <span class="format-pill">
-                                <b>ASCII Tab</b>
+                                <b>ASCII tab</b>
                                 <small>Legacy — rhythm is approximated</small>
+                            </span>
+                        </label>
+                        <label class="format-option">
+                            <input type="radio" name="score-format" value="none">
+                            <span class="format-pill">
+                                <b>Rig only</b>
+                                <small>Save the gear now, add the tab later</small>
                             </span>
                         </label>
                     </div>
 
                     <!-- Guitar Pro upload -->
                     <div class="format-pane active" data-format="gp">
-                        <div id="gp-dropzone" class="dropzone">
+                        <div id="gp-dropzone" class="dropzone" tabindex="0" role="button"
+                             aria-label="Choose a Guitar Pro file">
                             <div class="dropzone-icon">📄</div>
                             <div class="dropzone-text">Drop a Guitar Pro file here, or click to browse</div>
                             <div class="dropzone-hint">.gp3 · .gp4 · .gp5 · .gpx · .gp · .musicxml</div>
                             <div id="gp-file-name" class="dropzone-file">No file chosen</div>
                         </div>
                         <input type="file" id="gp-file" accept=".gp,.gp3,.gp4,.gp5,.gpx,.musicxml,.xml" hidden>
+                        <p class="pane-hint">
+                            Multi-track files are fine — bass, drum and vocal staves are
+                            stripped on import and only guitar parts are kept.
+                        </p>
                     </div>
 
                     <!-- alphaTex editor -->
@@ -268,22 +411,41 @@
                     <!-- Legacy ASCII editor -->
                     <div class="format-pane" data-format="ascii">
                         <div class="tab-toolbar">
-                            <button id="btn-insert-bar" class="sm-btn">Insert Bar (|)</button>
-                            <button id="btn-insert-template" class="sm-btn">Load Blank Tab Template</button>
+                            <button type="button" id="btn-insert-bar" class="sm-btn">Insert bar (|)</button>
+                            <button type="button" id="btn-insert-template" class="sm-btn">Load blank 6-string template</button>
                         </div>
-                        <textarea id="new-tab-text" spellcheck="false" placeholder="Write or paste your ASCII tablature here..."></textarea>
+                        <textarea id="new-tab-text" spellcheck="false"
+                                  placeholder="Write or paste your own six-string tablature here..."></textarea>
                         <p class="pane-hint warn">
                             ASCII tab has no rhythm information. Notes are snapped to a 16th-note
                             grid based on their horizontal spacing, so playback timing is an
                             approximation.
                         </p>
                     </div>
-                </div>
+
+                    <!-- Metadata-only -->
+                    <div class="format-pane" data-format="none">
+                        <div class="rig-only-note">
+                            <div class="dropzone-icon">🎛</div>
+                            <h3>Save the rig on its own</h3>
+                            <p>
+                                The song goes into the directory with its full amp and pedal
+                                settings and a <b>Needs score</b> badge. Attach a Guitar Pro
+                                file to it whenever you have one.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <div class="modal-footer">
-                <button id="btn-cancel-modal">Cancel</button>
-                <button id="btn-submit-song" class="btn-accent">Save & Submit Song</button>
+                <div id="form-error" class="form-error hidden" role="alert"></div>
+                <div class="footer-actions">
+                    <button type="button" id="btn-cancel-modal">Cancel</button>
+                    <button type="button" id="btn-prev-step" class="btn-ghost" disabled>← Back</button>
+                    <button type="button" id="btn-next-step" class="btn-ghost">Next →</button>
+                    <button type="button" id="btn-submit-song" class="btn-accent">Save song</button>
+                </div>
             </div>
         </div>
     </div>

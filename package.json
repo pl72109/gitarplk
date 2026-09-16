@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "seed": "node scripts/seed-songs.mjs",
     "verify:converter": "node scripts/verify-converter.mjs",
+    "verify:guitar-only": "node scripts/verify-guitar-only.mjs",
     "verify:ui": "node scripts/verify-ui.mjs"
   },
   "dependencies": {

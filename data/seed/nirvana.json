@@ -1,0 +1,445 @@
+[
+  {
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 117,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Teen Spirit Clean-to-Crush",
+      "guitar": "1969 Fender Competition Mustang, stock single-coils (humbucker mod came later)",
+      "amp": {
+        "model": "Fender Bassman (rented, modified); Mesa/Boogie Studio Preamp + Crown live",
+        "settings": {
+          "Gain": 3,
+          "Bass": 4,
+          "Mid": 8,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Marshall 1960A 4x12 with Celestions (live rig); studio amp cab close-miked at",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "4",
+            "Level": "10 (maxed)"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock (slow)",
+            "Depth switch": "Up (deep)"
+          }
+        }
+      ],
+      "notes": "Keep the amp clean and let the DS-1 make all the gain — Cobain ran the pedal's level maxed into a clean platform with the mids pushed well past noon. Butch Vig credits the Small Clone for the watery pre-chorus build; kick the chorus in for the clean sections and off for the big power-chord hits. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Come As You Are",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 120,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Watery Small Clone Verse",
+      "guitar": "1965 Fender Jaguar with DiMarzio pickups (1969 Competition Mustang also in",
+      "amp": {
+        "model": "Vox AC30 (clean verse) / Fender Bassman for the heavier chorus layers",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Vox AC30 stock 2x12 with Celestion Blues",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock (slow, wide wobble)",
+            "Depth switch": "Up (deep)"
+          }
+        },
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        }
+      ],
+      "notes": "The Small Clone is the entire identity of this tone — depth switch up, rate slow, running into a clean amp for the verse, with the DS-1 stacked on top for the chorus and solo. The album take is a full whole step down to D standard; Nirvana usually played it live only a half step down (Eb standard), which sits a semitone above the record. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "In Bloom",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 157,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Boogie Verse / Bassman Chorus Wall",
+      "guitar": "1969 Fender Competition Mustang",
+      "amp": {
+        "model": "Mesa/Boogie Studio Preamp into Crown Power Base 2; Fender Bassman for choruses",
+        "settings": {
+          "Gain": 6,
+          "Bass": 6,
+          "Mid": 6,
+          "Treble": 5,
+          "Presence": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Marshall 1960A 4x12 with Celestions",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10-11 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        },
+        {
+          "model": "ProCo RAT",
+          "type": "Distortion",
+          "settings": {
+            "Distortion": "6",
+            "Filter": "3 (rolled back, i.e. darker)",
+            "Volume": "6"
+          }
+        }
+      ],
+      "notes": "Two distinct guitar tones: the tighter Mesa/Boogie preamp voice on the verses and the fatter Bassman for the layered choruses, so build the song from two amp/gain states rather than one. A ProCo RAT was on the Nevermind sessions (sometimes split to a DI into the console) but per-song use is not documented — treat it as the optional darker-flavoured alternative to the DS-1 here. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Lithium",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 123,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Big Muff Thump",
+      "guitar": "1969 Fender Competition Mustang",
+      "amp": {
+        "model": "Fender Bassman (Doug Wilson-modified unit at Smart Studios; a rented LA Bassman",
+        "settings": {
+          "Gain": 5,
+          "Bass": 7,
+          "Mid": 7,
+          "Treble": 5,
+          "Presence": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Bassman 2x12 cab, miked with a Neumann U87 for the rounder low end",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Big Muff Pi",
+          "type": "Fuzz",
+          "settings": {
+            "Sustain": "8",
+            "Tone": "4 (dark side of the mid scoop)",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock",
+            "Depth switch": "Up (deep)"
+          }
+        }
+      ],
+      "notes": "Butch Vig has repeatedly named a Big Muff into the Bassman as the source of the 'darker, thumpier' chorus tone here — swap the DS-1 for a Muff and let the low end sit heavier than on the rest of the record. Exactly which Muff revision was used is a long-running dispute (Vig recalls a Russian unit, collectors argue for an early-'90s V3/V5/V6), so dial by ear rather than chasing [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Heart-Shaped Box",
+    "artist": "Nirvana",
+    "album": "In Utero",
+    "year": 1993,
+    "bpm": 100,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Polychorus Swirl / Quad Reverb Rasp",
+      "guitar": "1970s Univox Hi-Flier (Phase 2); 1969 Fender Competition Mustang also used on",
+      "amp": {
+        "model": "1970s Fender Quad Reverb, deliberately left broken (one power tube, one blown",
+        "settings": {
+          "Gain": 4,
+          "Bass": 4,
+          "Mid": 8,
+          "Treble": 5,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "The Quad Reverb's own internal 4x12 with Utah speakers — no external cab",
+      "pedals": [
+        {
+          "model": "Tech 21 SansAmp (original Courtney Love unit)",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "7",
+            "Level": "6",
+            "Character": "Mid-forward preset, high-end rolled off"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Poly Chorus",
+          "type": "Modulation",
+          "settings": {
+            "Feedback": "4 (solo) / 4 (chorus section)",
+            "Rate": "10 (solo) / 4 (chorus section)",
+            "Width": "2 (solo) / 10 (chorus section)",
+            "Tune": "10 (solo) / 2 (chorus section)"
+          }
+        },
+        {
+          "model": "Boss DS-2 Turbo Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Level": "10 (maxed)",
+            "Tone": "4-6",
+            "Dist": "10 (maxed)",
+            "Mode": "I (non-turbo)"
+          }
+        }
+      ],
+      "notes": "The Poly Chorus values above come from Cobain's own handwritten settings sheet, photographed and published by Electro-Harmonix — note the reissue Polychorus has the controls in different positions, so translate rather than copy blindly. Albini has since said the actual recorded solo used a one-off ring-modulator/overdrive box built by his friend 'Mr. Bill' (nicknamed 'Pedal [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "All Apologies",
+    "artist": "Nirvana",
+    "album": "In Utero",
+    "year": 1993,
+    "bpm": 114,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Drop-Db Slide Chime",
+      "guitar": "1969 Fender Competition Mustang (In Utero sessions); 1959 Martin D-18E for the",
+      "amp": {
+        "model": "1970s Fender Quad Reverb, used on its own (broken power tubes, blown speaker)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 4,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Quad Reverb internal 4x12 with Utah speakers, one speaker blown",
+      "pedals": [
+        {
+          "model": "Tech 21 SansAmp (original Courtney Love unit)",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "5 (edge of breakup for the verse)",
+            "Level": "6",
+            "Character": "Mids up, top end tamed"
+          }
+        }
+      ],
+      "notes": "This one lives on the edge of breakup rather than on full distortion — set the SansAmp so the verse glassy-cleans up when you back off the picking hand and only bites on the heavier passages. The Unplugged version drops the whole electric chain: acoustic in Drop Db straight into the room, no pedals. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Something in the Way",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 53,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Junk-Shop Stella Whisper",
+      "guitar": "1960s Stella Harmony H912 12-string, strung and played as a six-string, tuners",
+      "amp": {
+        "model": "No amp on the record (Stella miked with an AKG C414, played almost inaudibly on",
+        "settings": {
+          "Gain": 2,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 5,
+          "Presence": 3,
+          "Master": 3
+        }
+      },
+      "cab": "None on the record — direct-miked acoustic; Twin Reverb 2x12 if you amplify it",
+      "pedals": [],
+      "notes": "There is essentially no rig here: the tone is a nearly-unplayable detuned pawn-shop acoustic captured very quietly and then built around, so dynamics and a soft touch matter far more than gear. Charts circulate in both Drop C (C G C F A D) and Drop Db because the Stella wouldn't hold pitch — tune to the record by ear with heavier strings. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "About a Girl",
+    "artist": "Nirvana",
+    "album": "Bleach",
+    "year": 1989,
+    "bpm": 130,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Bleach-Era Twin Grind",
+      "guitar": "1970s Univox Hi-Flier (Phase 3) with stock humbuckers",
+      "amp": {
+        "model": "Jack Endino's own modified silverface Fender Twin Reverb, run as a head with no",
+        "settings": {
+          "Gain": 2,
+          "Bass": 4,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Cobain's BFI Bullfrog closed-back 2x12 loaded with 70/75-watt Celestions",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        }
+      ],
+      "notes": "Correct the common myth before you dial in: Cobain's Randall solid-state head was in the shop during the Bleach sessions, so the album tone is Endino's modded silverface Twin into Kurt's Bullfrog 2x12, with the DS-1 supplying the grit. Keep the clean verses genuinely clean and stomp the DS-1 only for the chorus and solo — the Bleach album take is in plain standard tuning [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  }
+]

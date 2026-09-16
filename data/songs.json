@@ -1,52 +1,2193 @@
 [
   {
-    "id": 1,
     "title": "Smells Like Teen Spirit",
     "artist": "Nirvana",
-    "bpm": 116,
-    "status": "approved",
-    "tracks": [
-      {
-        "instrument": "Guitar",
-        "tuning": "Standard (E A D G B E)",
-        "preset": "Grunge Distortion & Chorus Clean",
-        "amp": { "model": "Mesa/Boogie Studio Preamp", "settings": { "Gain": 8, "Bass": 6, "Mid": 4, "Treble": 7, "Master": 6 } },
-        "pedals": [
-          { "model": "Boss DS-1 Distortion", "settings": { "Tone": 5, "Level": 7, "Distortion": 9 } },
-          { "model": "EHX Small Clone Chorus", "settings": { "Rate": 4, "Depth": "Deep" } }
-        ],
-        "tab": "[SECTION: Main Intro Riff]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------3-3-3-0---------6-6-6-0-|---------3-3-3-0---------6-6-6-0-|\nD|-3-3-x-x-3-3-3-0-6-6-x-x-6-6-6-0|-3-3-x-x-3-3-3-0-6-6-x-x-6-6-6-0-|\nA|-3-3-x-x-1-1-1-0-6-6-x-x-4-4-4-0|-3-3-x-x-1-1-1-0-6-6-x-x-4-4-4-0-|\nE|-1-1-x-x---------4-4-x-x---------|-1-1-x-x---------4-4-x-x---------|\n\n[SECTION: Verse - Clean Arpeggio]\ne|-----------------|-----------------|-----------------|-----------------|\nB|-----1-------1---|-----1-------1---|-----1-------1---|-----1-------1---|\nG|---1---1---1---1-|---1---1---1---1-|---1---1---1---1-|---1---1---1---1-|\nD|-3-------3-------|-3-------3-------|-3-------3-------|-3-------3-------|\nA|-----------------|-----------------|-----------------|-----------------|\nE|-----------------|-----------------|-----------------|-----------------|\n\n[SECTION: Chorus - Distortion Heavy]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------3-3-3-0---------6-6-6-0-|---------3-3-3-0---------6-6-6-0-|\nD|-3-3-3-3-3-3-3-0-6-6-6-6-6-6-6-0|-3-3-3-3-3-3-3-0-6-6-6-6-6-6-6-0-|\nA|-3-3-3-3-1-1-1-0-6-6-6-6-4-4-4-0|-3-3-3-3-1-1-1-0-6-6-6-6-4-4-4-0-|\nE|-1-1-1-1---------4-4-4-4---------|-1-1-1-1---------4-4-4-4---------|\n\n[SECTION: Guitar Solo]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|-10---8--6--5--6--5--3--1--3--1--|-0-------------------------------|\nD|---------------------------------|----3--1--3----------------------|\nA|---------------------------------|---------------------------------|\nE|---------------------------------|---------------------------------|\n\n[SECTION: Outro]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------3-3-3-------------------|---------3-3-3-------------------|\nD|-3-3-x-x-3-3-3---6-6-6-6---------|-3-3-x-x-3-3-3---6-6-6-6---------|\nA|-3-3-x-x-1-1-1---6-6-6-6---------|-3-3-x-x-1-1-1---6-6-6-6---------|\nE|-1-1-x-x---------4-4-4-4---------|-1-1-x-x---------4-4-4-4---------|"
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 117,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Teen Spirit Clean-to-Crush",
+      "guitar": "1969 Fender Competition Mustang, stock single-coils (humbucker mod came later)",
+      "amp": {
+        "model": "Fender Bassman (rented, modified); Mesa/Boogie Studio Preamp + Crown live",
+        "settings": {
+          "Gain": 3,
+          "Bass": 4,
+          "Mid": 8,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 7
+        }
       },
-      {
-        "instrument": "Bass",
-        "tuning": "Standard (E A D G)",
-        "preset": "Warm Overdriven Bass",
-        "amp": { "model": "Ampeg SVT Pro", "settings": { "Gain": 6, "Bass": 7, "Mid": 5, "Treble": 6 } },
-        "pedals": [
-          { "model": "Tech 21 SansAmp", "settings": { "Drive": 5, "Blend": 8 } }
-        ],
-        "tab": "[SECTION: Main Bassline]\nG|---------------------------------|---------------------------------|\nD|---------------------------------|---------------------------------|\nA|---------1-1-1-0---------4-4-4-0-|---------1-1-1-0---------4-4-4-0-|\nE|-1-1-1-1---------4-4-4-4---------|-1-1-1-1---------4-4-4-4---------|"
-      }
-    ]
+      "cab": "Marshall 1960A 4x12 with Celestions (live rig); studio amp cab close-miked at",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "4",
+            "Level": "10 (maxed)"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock (slow)",
+            "Depth switch": "Up (deep)"
+          }
+        }
+      ],
+      "notes": "Keep the amp clean and let the DS-1 make all the gain — Cobain ran the pedal's level maxed into a clean platform with the mids pushed well past noon. Butch Vig credits the Small Clone for the watery pre-chorus build; kick the chorus in for the clean sections and off for the big power-chord hits. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 1
   },
   {
-    "id": 2,
-    "title": "Cowboys From Hell",
+    "title": "Cowboys from Hell",
     "artist": "Pantera",
+    "album": "Cowboys from Hell",
+    "year": 1990,
+    "bpm": 115,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Carpeted Randall Cowboy Crunch",
+      "guitar": "Dean ML \"Dean From Hell\" (1981, Bill Lawrence L-500XL bridge, Floyd Rose)",
+      "amp": {
+        "model": "Randall RG100ES (120W solid-state, carpeted head)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB 4x12 with Jaguar 60s; 412CB with Celestions for cleans",
+      "pedals": [
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed - the peak of the curve)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Furman PQ-3 / PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9 (driven hard to push the amp's front",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7 (medium-wide)",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8 (narrow)",
+            "High Freq": "just under 4 kHz",
+            "High Bandwidth": "~7"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer / Hush 2-B",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~11 o'clock",
+            "Placement": "last in the chain, in front of the amp"
+          }
+        },
+        {
+          "model": "MXR MX-126 Flanger/Doubler (rack)",
+          "type": "Modulation",
+          "settings": {
+            "Mode": "Flange",
+            "Width": "5",
+            "Speed": "2 (slow)",
+            "Regeneration": "4",
+            "Manual": "5",
+            "Mix": "low - thickening, not swooshing"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Q": "5-6",
+            "Range": "mid sweep",
+            "Boost": "unity"
+          }
+        }
+      ],
+      "notes": "The whole chain lives in FRONT of the amp - Furman into the MXR 6-band into the gate - so the two EQs act as one giant gain stage rather than a tone tweak; only the Flanger/Doubler sat in the loop, and it is what gives the intro its shimmer. Do not scoop the mids: the 800 Hz slider should be the highest point of the curve, which is what keeps this amp from sounding like fizzy Tuning note: recorded roughly a quarter step flat (reference pitch A≈428 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 2
+  },
+  {
+    "title": "Man in the Box",
+    "artist": "Alice in Chains",
+    "album": "Facelift",
+    "year": 1990,
+    "bpm": 106,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Talk Box Grunge Riff",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (maple neck, ebony board, Kahler trem, Seymour",
+      "amp": {
+        "model": "Bogner-modified Marshall JCM800 4010 50W combo (\"the Snorkler\")",
+        "settings": {
+          "Gain": 8,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Presence": 6,
+          "Master": 4
+        }
+      },
+      "cab": "Snorkler head into a 4x12 with '70s Greenbacks, front and rear mics blended",
+      "pedals": [
+        {
+          "model": "Dunlop Heil Talk Box",
+          "type": "Utility",
+          "settings": {
+            "Placement": "Between amp output and speaker cab",
+            "Tube position": "Taped to mic stand, in mouth",
+            "Vowel shapes": "Wide 'ah'-to-'ooh' mouth movement",
+            "Mic": "Vocal mic in front of tube, own channel"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95 (tech-modded; a Hendrix JH-1 is also cited for this era)",
+          "type": "Wah",
+          "settings": {
+            "Use": "Solo only, not the talk box intro",
+            "Sweep": "Parked slightly forward for midrange"
+          }
+        },
+        {
+          "model": "BK Butler Tube Driver",
+          "type": "Overdrive",
+          "settings": {
+            "Drive": "5",
+            "Tube Drive": "6",
+            "Level": "6",
+            "Hi": "6",
+            "Lo": "5"
+          }
+        }
+      ],
+      "notes": "Engineer Ronnie Champagne has said Facelift was essentially his own Bogner-modded JCM800 combo (\"the Snorkler\") plus a BK Butler Tube Driver for rhythms and leads, and that Cantrell picked it as the album sound on first play. The intro is a talk box blended with wah, not a wah alone; producer Dave Jerden suggested the talk box after hearing \"Livin' on a Prayer\" on the radio. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 3
+  },
+  {
+    "title": "Them Bones",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 165,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Drop Db (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Drop Db Sludge Stack",
+      "guitar": "1984 G&L Rampage \"No War\" (his second Rampage, kept in drop tuning; Seymour",
+      "amp": {
+        "model": "Bogner Fish preamp into VHT power amp (lows); Bogner Ecstasy (mids); Rockman",
+        "settings": {
+          "Gain": 7,
+          "Bass": 8,
+          "Mid": 4,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 4
+        }
+      },
+      "cab": "Marshall 4x12 with Vox Bulldog speakers",
+      "pedals": [
+        {
+          "model": "Rockman X100 headphone amp (recorded direct as the top-end layer)",
+          "type": "Utility",
+          "settings": {
+            "Mode": "Distorted / Edge",
+            "Role": "Thin trebly layer stacked over the amps",
+            "Blend": "Low in the mix, per side"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95",
+          "type": "Wah",
+          "settings": {
+            "Use": "Solo accents only",
+            "Sweep": "Short, aggressive rocking"
+          }
+        }
+      ],
+      "notes": "Dirt was tracked by splitting one performance into three frequency bands with a Lucas Deceiver splitter: Dual Rectifier for lows, Bogner-modified JCM800 / Bogner Fish for the biting mids, Rockman direct on top, then double-tracked for six stacked guitars. Note that Jerden disputes Cantrell's recollection of the Dual Rectifier, so treat the exact low-end amp as contested. The [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 4
+  },
+  {
+    "title": "Would?",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 100,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Fish Shark Channel Crunch",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (Seymour Duncan JB bridge humbucker)",
+      "amp": {
+        "model": "Bogner Fish preamp into VHT power amp (low layer of the three-amp Dirt split)",
+        "settings": {
+          "Gain": 7,
+          "Bass": 6,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Rockman X100 headphone amp (direct top-end layer)",
+          "type": "Utility",
+          "settings": {
+            "Mode": "Distorted",
+            "Role": "High-frequency doubling layer",
+            "Blend": "Subtle"
+          }
+        }
+      ],
+      "notes": "Contrary to a common assumption this is not drop D: transcriptions consistently give plain Eb standard, with the weight coming from the arrangement rather than a dropped sixth string. The Fish's Shark channel is the documented home of Cantrell's core rhythm voicing; aim for controlled rather than scooped bass so the chords keep note definition under the vocal. Restrained gain [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 5
+  },
+  {
+    "title": "Rooster",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 72,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Flanged Clean to Wah Lead",
+      "guitar": "1984 G&L Rampage \"Blue Dress\"",
+      "amp": {
+        "model": "Bogner-modified Marshall JCM800 (\"the Snorkler\"), clean-edge for the intro and",
+        "settings": {
+          "Gain": 4,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Electric Mistress",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "Slow, roughly 9 o'clock",
+            "Range": "5",
+            "Color / Feedback": "Low - subtle swirl, no jet-plane whoosh",
+            "Filter Matrix": "Off"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95",
+          "type": "Wah",
+          "settings": {
+            "Use": "Outro solo",
+            "Sweep": "Slow, wide, in time with the phrasing"
+          }
+        }
+      ],
+      "notes": "The swirling intro is a flanger, not a chorus - the Electric Mistress is Cantrell's documented flanger of choice and its flange/chorus hybrid voicing is exactly why people mishear it. Keep feedback low so the metallic edge stays subtle. A Boss BF-2 is the commonly reported substitute. Most tabs give plain Eb standard; a minority transcription claims the G string is dropped a [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 6
+  },
+  {
+    "title": "Down in a Hole",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 95,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Fingerpicked Clean / Heavy Chorus Swell",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (neck-position clean for verses); Guild JF30",
+      "amp": {
+        "model": "Fender Twin Reverb for the clean arpeggios, Bogner-modified JCM800 for the",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 5
+        }
+      },
+      "cab": "Twin Reverb 2x12 (Jensen/Oxford-voiced cleans); Marshall 1960B 4x12 with",
+      "pedals": [
+        {
+          "model": "Boss CE-5 Chorus Ensemble (or CH-1 Super Chorus)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow, around 9 o'clock",
+            "Depth": "4",
+            "E.Level": "5",
+            "Filter": "Full range"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "3-4 - long-tail ambience, not a wash"
+          }
+        }
+      ],
+      "notes": "Eb standard is the baseline for both the Dirt and Unplugged versions. The intro is the one spot where Cantrell fingerpicks melodic content out of the chord shapes, so set the clean tone with enough compression and sustain for individual notes to ring across the bar. No per-song rig breakdown has been published for this track, so the clean chain here is inferred from his [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 7
+  },
+  {
+    "title": "Nutshell",
+    "artist": "Alice in Chains",
+    "album": "Jar of Flies",
+    "year": 1994,
+    "bpm": 68,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Twin Reverb Clean Ballad",
+      "guitar": "Guild acoustic (Cantrell's documented main acoustic of the era)",
+      "amp": {
+        "model": "Fender Twin Reverb",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 4
+        }
+      },
+      "cab": "Fender Twin Reverb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Boss CH-1 Super Chorus",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow",
+            "Depth": "3",
+            "E.Level": "4",
+            "EQ": "5"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "4"
+          }
+        }
+      ],
+      "notes": "Jar of Flies was tracked at London Bridge Studio in September 1993 and its cleaner, more ethereal sound is widely credited to the Fender Twin Reverb rather than the Marshall/Bogner stack - the Roland JC-120 often associated with Cantrell is not documented for these sessions. The lead break wants amp breakup from volume and pick attack, not a distortion pedal: roll the guitar [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 8
+  },
+  {
+    "title": "No Excuses",
+    "artist": "Alice in Chains",
+    "album": "Jar of Flies",
+    "year": 1994,
+    "bpm": 117,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Jangly Open-String Clean",
+      "guitar": "G&L Rampage \"Blue Dress\"",
+      "amp": {
+        "model": "Fender Twin Reverb",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 5,
+          "Treble": 7,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Fender Twin Reverb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Boss CE-5 Chorus Ensemble",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow",
+            "Depth": "3",
+            "E.Level": "4",
+            "Filter": "Full"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "3"
+          }
+        }
+      ],
+      "notes": "Eb standard, no capo - the capo 3 arrangements circulating online are transposed beginner versions, not what Cantrell played. The signature jangle comes from barre shapes moving against ringing open top strings, so set a bright, uncompressed clean and let the open strings bloom. Watch the fret positions: tuned down a half step the verse shapes sit at the 5th and 7th frets, a [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 9
+  },
+  {
+    "title": "Check My Brain",
+    "artist": "Alice in Chains",
+    "album": "Black Gives Way to Blue",
+    "year": 2009,
     "bpm": 114,
-    "status": "approved",
-    "tracks": [
-      {
-        "instrument": "Guitar",
-        "tuning": "Standard (E A D G B E)",
-        "preset": "Dimebag Razor Sharp High Gain",
-        "amp": { "model": "Randall RG1003H Solid State", "settings": { "Gain": 10, "Bass": 9, "Mid": 2, "Treble": 9, "Presence": 9 } },
-        "pedals": [
-          { "model": "MXR 6-Band Graphic EQ", "settings": { "100Hz": 7, "800Hz": 1, "3.2kHz": 8 } },
-          { "model": "DigiTech Whammy", "settings": { "Mode": "Octave Up" } }
-        ],
-        "tab": "[SECTION: Main Intro Flutter]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------------------------------|---------------------------------|\nD|---------------------------------|---------------------------------|\nA|-------5---7-------5---7-------5-|---7-------5---7-------5---7-----|\nE|-0-0-0---0---0-0-0---0---0-0-0---|-0---0-0-0---0---0-0-0---0---0-0-|\n\n[SECTION: Main Heavy Riff]\ne|-----------------------------------------|-----------------------------------------|\nB|-----------------------------------------|-----------------------------------------|\nG|-----------------------------------------|-----------------------------------------|\nD|-------------------12-14-----------------|-------------------12-14-----------------|\nA|----------12-13-14-------14-13-12--------|----------12-13-14-------14-13-12--------|\nE|-12-13-14-------------------------14-13-12|-12-13-14-------------------------14-13-12|\n\n[SECTION: Verse Riff]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------------------------------|---------------------------------|\nD|---------------------------------|---------------------------------|\nA|-2---2---5/7---2---2---5/7-------|-2---2---5/7---8--7--5-----------|\nE|-0---0---3/5---0---0---3/5-------|-0---0---3/5---6--5--3-----------|\n\n[SECTION: Chorus Riff]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------------------------------|---------------------------------|\nD|-9-9-9-7---9-9-9-7---9-9-7-------|-9-9-9-7---9-9-9-7---5-----------|\nA|-7-7-7-5---7-7-7-5---7-7-5-------|-7-7-7-5---7-7-7-5---3---5-------|\nE|---------------------------------|-------------------------3-------|\n\n[SECTION: Outro Breakdown]\ne|---------------------------------|---------------------------------|\nB|---------------------------------|---------------------------------|\nG|---------------------------------|---------------------------------|\nD|---------------------------------|---------------------------------|\nA|-2-2---2-2---2-2---2-2-----------|-2-2---2-2---5---7---8---7-------|\nE|-0-0---0-0---0-0---0-0-----------|-0-0---0-0---3---5---6---5-------|"
-      }
-    ]
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop C# / Drop Db (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Seasick Modern Drop Riff",
+      "guitar": "Gibson Les Paul Custom, or the G&L Rampage; Motor City bridge pickup",
+      "amp": {
+        "model": "Dave Friedman-built \"Marsha\" 50W Marshall-style head (Bogner Fish preamp also",
+        "settings": {
+          "Gain": 7,
+          "Bass": 6,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Dunlop JC95 Jerry Cantrell Signature Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Volume": "Unity",
+            "Q": "Mid-range, factory",
+            "Use": "Lead sections"
+          }
+        },
+        {
+          "model": "MXR Smart Gate",
+          "type": "Utility",
+          "settings": {
+            "Trigger": "Low",
+            "Mode": "Mid",
+            "Purpose": "Tighten the gaps between drop-tuned"
+          }
+        },
+        {
+          "model": "ISP Decimator",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "Set just above the rig's noise floor"
+          }
+        }
+      ],
+      "notes": "Transcriptions vary between drop D, drop C# and Eb standard, but the record sits in drop Db/C# - drop-D shapes moved down a half step. The lurching \"seasick\" character is fretting-hand, not a whammy bar: Cantrell described it as slightly out of tune, not quite a full bend, a two-note idea he credits to listening to Iommi. Album amps reportedly included the Bogner Fish [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 10
+  },
+  {
+    "title": "Come As You Are",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 120,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Watery Small Clone Verse",
+      "guitar": "1965 Fender Jaguar with DiMarzio pickups (1969 Competition Mustang also in",
+      "amp": {
+        "model": "Vox AC30 (clean verse) / Fender Bassman for the heavier chorus layers",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Vox AC30 stock 2x12 with Celestion Blues",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock (slow, wide wobble)",
+            "Depth switch": "Up (deep)"
+          }
+        },
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        }
+      ],
+      "notes": "The Small Clone is the entire identity of this tone — depth switch up, rate slow, running into a clean amp for the verse, with the DS-1 stacked on top for the chorus and solo. The album take is a full whole step down to D standard; Nirvana usually played it live only a half step down (Eb standard), which sits a semitone above the record. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 11
+  },
+  {
+    "title": "In Bloom",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 157,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Boogie Verse / Bassman Chorus Wall",
+      "guitar": "1969 Fender Competition Mustang",
+      "amp": {
+        "model": "Mesa/Boogie Studio Preamp into Crown Power Base 2; Fender Bassman for choruses",
+        "settings": {
+          "Gain": 6,
+          "Bass": 6,
+          "Mid": 6,
+          "Treble": 5,
+          "Presence": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Marshall 1960A 4x12 with Celestions",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10-11 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        },
+        {
+          "model": "ProCo RAT",
+          "type": "Distortion",
+          "settings": {
+            "Distortion": "6",
+            "Filter": "3 (rolled back, i.e. darker)",
+            "Volume": "6"
+          }
+        }
+      ],
+      "notes": "Two distinct guitar tones: the tighter Mesa/Boogie preamp voice on the verses and the fatter Bassman for the layered choruses, so build the song from two amp/gain states rather than one. A ProCo RAT was on the Nevermind sessions (sometimes split to a DI into the console) but per-song use is not documented — treat it as the optional darker-flavoured alternative to the DS-1 here. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 12
+  },
+  {
+    "title": "Lithium",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 123,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Big Muff Thump",
+      "guitar": "1969 Fender Competition Mustang",
+      "amp": {
+        "model": "Fender Bassman (Doug Wilson-modified unit at Smart Studios; a rented LA Bassman",
+        "settings": {
+          "Gain": 5,
+          "Bass": 7,
+          "Mid": 7,
+          "Treble": 5,
+          "Presence": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Bassman 2x12 cab, miked with a Neumann U87 for the rounder low end",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Big Muff Pi",
+          "type": "Fuzz",
+          "settings": {
+            "Sustain": "8",
+            "Tone": "4 (dark side of the mid scoop)",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Clone",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "9 o'clock",
+            "Depth switch": "Up (deep)"
+          }
+        }
+      ],
+      "notes": "Butch Vig has repeatedly named a Big Muff into the Bassman as the source of the 'darker, thumpier' chorus tone here — swap the DS-1 for a Muff and let the low end sit heavier than on the rest of the record. Exactly which Muff revision was used is a long-running dispute (Vig recalls a Russian unit, collectors argue for an early-'90s V3/V5/V6), so dial by ear rather than chasing [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 13
+  },
+  {
+    "title": "Heart-Shaped Box",
+    "artist": "Nirvana",
+    "album": "In Utero",
+    "year": 1993,
+    "bpm": 100,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Polychorus Swirl / Quad Reverb Rasp",
+      "guitar": "1970s Univox Hi-Flier (Phase 2); 1969 Fender Competition Mustang also used on",
+      "amp": {
+        "model": "1970s Fender Quad Reverb, deliberately left broken (one power tube, one blown",
+        "settings": {
+          "Gain": 4,
+          "Bass": 4,
+          "Mid": 8,
+          "Treble": 5,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "The Quad Reverb's own internal 4x12 with Utah speakers — no external cab",
+      "pedals": [
+        {
+          "model": "Tech 21 SansAmp (original Courtney Love unit)",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "7",
+            "Level": "6",
+            "Character": "Mid-forward preset, high-end rolled off"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Poly Chorus",
+          "type": "Modulation",
+          "settings": {
+            "Feedback": "4 (solo) / 4 (chorus section)",
+            "Rate": "10 (solo) / 4 (chorus section)",
+            "Width": "2 (solo) / 10 (chorus section)",
+            "Tune": "10 (solo) / 2 (chorus section)"
+          }
+        },
+        {
+          "model": "Boss DS-2 Turbo Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Level": "10 (maxed)",
+            "Tone": "4-6",
+            "Dist": "10 (maxed)",
+            "Mode": "I (non-turbo)"
+          }
+        }
+      ],
+      "notes": "The Poly Chorus values above come from Cobain's own handwritten settings sheet, photographed and published by Electro-Harmonix — note the reissue Polychorus has the controls in different positions, so translate rather than copy blindly. Albini has since said the actual recorded solo used a one-off ring-modulator/overdrive box built by his friend 'Mr. Bill' (nicknamed 'Pedal [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 14
+  },
+  {
+    "title": "All Apologies",
+    "artist": "Nirvana",
+    "album": "In Utero",
+    "year": 1993,
+    "bpm": 114,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Drop-Db Slide Chime",
+      "guitar": "1969 Fender Competition Mustang (In Utero sessions); 1959 Martin D-18E for the",
+      "amp": {
+        "model": "1970s Fender Quad Reverb, used on its own (broken power tubes, blown speaker)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 4,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Quad Reverb internal 4x12 with Utah speakers, one speaker blown",
+      "pedals": [
+        {
+          "model": "Tech 21 SansAmp (original Courtney Love unit)",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "5 (edge of breakup for the verse)",
+            "Level": "6",
+            "Character": "Mids up, top end tamed"
+          }
+        }
+      ],
+      "notes": "This one lives on the edge of breakup rather than on full distortion — set the SansAmp so the verse glassy-cleans up when you back off the picking hand and only bites on the heavier passages. The Unplugged version drops the whole electric chain: acoustic in Drop Db straight into the room, no pedals. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 15
+  },
+  {
+    "title": "Something in the Way",
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": 1991,
+    "bpm": 53,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Drop Db / Drop C# (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Junk-Shop Stella Whisper",
+      "guitar": "1960s Stella Harmony H912 12-string, strung and played as a six-string, tuners",
+      "amp": {
+        "model": "No amp on the record (Stella miked with an AKG C414, played almost inaudibly on",
+        "settings": {
+          "Gain": 2,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 5,
+          "Presence": 3,
+          "Master": 3
+        }
+      },
+      "cab": "None on the record — direct-miked acoustic; Twin Reverb 2x12 if you amplify it",
+      "pedals": [],
+      "notes": "There is essentially no rig here: the tone is a nearly-unplayable detuned pawn-shop acoustic captured very quietly and then built around, so dynamics and a soft touch matter far more than gear. Charts circulate in both Drop C (C G C F A D) and Drop Db because the Stella wouldn't hold pitch — tune to the record by ear with heavier strings. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 16
+  },
+  {
+    "title": "About a Girl",
+    "artist": "Nirvana",
+    "album": "Bleach",
+    "year": 1989,
+    "bpm": 130,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Bleach-Era Twin Grind",
+      "guitar": "1970s Univox Hi-Flier (Phase 3) with stock humbuckers",
+      "amp": {
+        "model": "Jack Endino's own modified silverface Fender Twin Reverb, run as a head with no",
+        "settings": {
+          "Gain": 2,
+          "Bass": 4,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Cobain's BFI Bullfrog closed-back 2x12 loaded with 70/75-watt Celestions",
+      "pedals": [
+        {
+          "model": "Boss DS-1 Distortion",
+          "type": "Distortion",
+          "settings": {
+            "Tone": "10 o'clock",
+            "Distortion": "5",
+            "Level": "10 (maxed)"
+          }
+        }
+      ],
+      "notes": "Correct the common myth before you dial in: Cobain's Randall solid-state head was in the shop during the Bleach sessions, so the album tone is Endino's modded silverface Twin into Kurt's Bullfrog 2x12, with the DS-1 supplying the grit. Keep the clean verses genuinely clean and stomp the DS-1 only for the chorus and solo — the Bleach album take is in plain standard tuning [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 17
+  },
+  {
+    "title": "Cemetery Gates",
+    "artist": "Pantera",
+    "album": "Cowboys from Hell",
+    "year": 1990,
+    "bpm": 146,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Clean Arpeggio to Squealing Lead",
+      "guitar": "Dean ML \"Dean From Hell\" (blue 1981 ML, Bill Lawrence L-500XL bridge, Floyd",
+      "amp": {
+        "model": "Randall RG100ES (clean channel for the intro, dirty channel for the heavy",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412CB 4x12 with Celestions for the clean parts, Randall 412JB 4x12 with",
+      "pedals": [
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+12 dB",
+            "3.2 kHz": "+15 dB"
+          }
+        },
+        {
+          "model": "Furman PQ-3 / PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer / Hush 2-B",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~10 o'clock (light, so sustained notes",
+            "Placement": "in front of the amp"
+          }
+        },
+        {
+          "model": "Rack chorus/reverb (Yamaha SPX90 or Korg G3 style)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "slow",
+            "Depth": "moderate",
+            "Mix": "~30% on the clean intro only"
+          }
+        }
+      ],
+      "notes": "Dimebag's tech has said he had no Whammy pedal yet in 1990, so the famous squeals here are pinch harmonics dragged up with the Floyd Rose, not a pitch shifter - keep the gate threshold low so those harmonics sustain and feed back. The clean intro is the same amp with the guitar volume rolled back plus a rack chorus; the exact 1990 clean path is not well documented, so treat Tuning note: recorded roughly a quarter step flat (reference pitch A≈428-434 Hz). [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 18
+  },
+  {
+    "title": "Mouth for War",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 157,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Vulgar Front-End Punch",
+      "guitar": "Dean ML (blue 1981 \"Dean From Hell\" - his standard-tuning guitar, Bill Lawrence",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9 (hot, used as a boost)",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock (tight, for the staccato",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby (leads only)",
+          "type": "Wah",
+          "settings": {
+            "Q": "6",
+            "Range": "mid-to-upper sweep",
+            "Use": "lead sections only"
+          }
+        }
+      ],
+      "notes": "Dimebag described the Vulgar chain himself as guitar into a Furman PQ-4, then the blue MXR six-band, then a Rocktron Hush, then the amps - and that is about it, so resist adding a distortion pedal. The percussive attack comes from a hard gate plus the treble-heavy solid-state clip, not from more gain. Tuning note: a quarter step flat - his tech described it as tuning to Eb then raising each string about 40 cents. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 19
+  },
+  {
+    "title": "Walk",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 118,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Swaggering Down-Tuned Groove",
+      "guitar": "Dean ML, tobacco-sunburst 1979 model - Dimebag's stated down-tuned guitar",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 4,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz (lower, to suit D standard)",
+            "Low Boost": "+9",
+            "Mid Freq": "~850 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+15 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Q": "6-7",
+            "Range": "upper sweep for the lead",
+            "Use": "solo only - parked and rocked hard"
+          }
+        }
+      ],
+      "notes": "Heavier strings go on for the drop to D - Dime ran .009-.050 sets on his down-tuned guitars rather than a standard .009-.046 - and the 12/8 riff depends on a tight gate and lots of pick attack, so push the Furman input rather than the amp's gain if it sounds soft. For period-correct pitch, set your tuner's reference to about 425 Hz and then tune to D standard. Tuning note: a quarter step flat (reference pitch A≈425 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 20
+  },
+  {
+    "title": "This Love",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 105,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Chorused Clean into Crushing Chorus",
+      "guitar": "Dean ML, tobacco-sunburst (down-tuned guitar), bridge pickup for the heavy",
+      "amp": {
+        "model": "Randall Century 200 II; Mesa/Boogie Mark IV clean channel via the Bradshaw",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412CB 4x12 with Celestions for cleans, Randall 412JB 4x12 with Jaguar",
+      "pedals": [
+        {
+          "model": "Rack chorus (Yamaha SPX90 / Korg G3)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "slow",
+            "Depth": "deep - the intro riff is openly chorused",
+            "Mix": "~40% on the verse, off for the heavy"
+          }
+        },
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+12 dB",
+            "3.2 kHz": "+14 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~11 o'clock",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "The whole dynamic of the song is one rig at two volumes - the clean verse is widely described as the same setup with the guitar volume rolled back and a chorus over it, then everything opens up for the chorus. The clean-side signal path is the least documented part of the Vulgar rig, so the chorus unit and its settings here are a reconstruction rather than a published spec. Tuning note: recorded roughly a quarter step flat. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 21
+  },
+  {
+    "title": "Becoming",
+    "artist": "Pantera",
+    "album": "Far Beyond Driven",
+    "year": 1994,
+    "bpm": 130,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Two-Octave Whammy Squeal",
+      "guitar": "Dean ML, tobacco-sunburst 1979 ML Standard (Floyd Rose, DiMarzio bridge)",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "DigiTech WH-1 Whammy",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy (not Harmony)",
+            "Interval": "2 Octaves Up (+2 OCT)",
+            "Mix": "100% wet",
+            "Treadle": "heel = dry pitch, toe = two octaves up"
+          }
+        },
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+9",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "This is the defining +2 octave Whammy track - Dimebag confirmed the two-octaves-up setting in interviews, and the effect only works if the source is a screaming pinch harmonic into a maxed front end, since the WH-1 needs a strong single pitch to track. Live he kept two Whammys, one onstage and a second backstage worked by his tech, so he did not have to stand on the pedal for Tuning note: a quarter step flat - the record sits audibly between C# and D standard. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 22
+  },
+  {
+    "title": "I'm Broken",
+    "artist": "Pantera",
+    "album": "Far Beyond Driven",
+    "year": 1994,
+    "bpm": 147,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Soundcheck Riff Grind",
+      "guitar": "Dean ML, tobacco-sunburst 1979 ML Standard (Floyd Rose, DiMarzio bridge)",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+9 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12-1 o'clock (aggressive, for the",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby (leads only)",
+          "type": "Wah",
+          "settings": {
+            "Q": "6",
+            "Range": "upper-mid sweep",
+            "Use": "lead only"
+          }
+        }
+      ],
+      "notes": "Dimebag said the main riff fell out of a soundcheck, and it wants a very fast-closing gate so the gaps between hits go dead silent - that silence is half the groove. Around Far Beyond Driven he described his onstage floor chain as just a Dunlop wah and the Whammy, with the two EQs and the noise reduction living in the rack. Tuning note: a quarter step flat (reference pitch A≈425 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 23
+  },
+  {
+    "title": "Floods",
+    "artist": "Pantera",
+    "album": "The Great Southern Trendkill",
+    "year": 1996,
+    "bpm": 121,
+    "status": "needs-score",
+    "difficulty": "Expert",
+    "tuning": "C# Standard (C# F# B E G# C#)",
+    "tuningPitches": [
+      "C#4",
+      "G#3",
+      "E3",
+      "B2",
+      "F#2",
+      "C#2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Trendkill Ballad and Outro Solo",
+      "guitar": "Washburn Dime 3 (Bill Lawrence L-500XL bridge, Seymour Duncan '59 neck)",
+      "amp": {
+        "model": "Randall RG100ES - Dime pulled the old carpeted head he cut Cowboys from Hell",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412JB 4x12 with Jaguar speakers for the heavy and lead tones; Randall",
+      "pedals": [
+        {
+          "model": "Furman PQ-3 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8 (the PQ-3 has a different gain",
+            "Low Freq": "~120 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+9 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+14 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~9-10 o'clock (barely on, so the outro",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Vox V847 Wah",
+          "type": "Wah",
+          "settings": {
+            "Use": "outro lead swells",
+            "Position": "rocked slowly, often half-parked"
+          }
+        },
+        {
+          "model": "Rack delay/reverb (Yamaha SPX90 / Korg G-series)",
+          "type": "Delay",
+          "settings": {
+            "Time": "~400 ms",
+            "Feedback": "2-3 repeats",
+            "Mix": "~25% on the lead, more on the clean"
+          }
+        }
+      ],
+      "notes": "The outro solo - voted one of the greatest of all time by Guitar World - is almost entirely sustain and Floyd Rose bar work, so open the noise gate further than you would for the riff songs and stand close enough to the cab to get controlled feedback. Dimebag used a Vox V847 early in the Trendkill sessions before moving to a rack Dunlop; the exact per-song delay unit is not Tuning note: recorded slightly flat. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 24
+  },
+  {
+    "title": "Creep",
+    "artist": "Radiohead",
+    "album": "Pablo Honey",
+    "year": 1993,
+    "bpm": 92,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Denmark Street Chorus Stab",
+      "guitar": "1992 Fender Telecaster Plus (Blue Lace Sensor neck, dual Red Lace Sensor",
+      "amp": {
+        "model": "Fender Eighty-Five (solid-state combo, CLEAN channel only)",
+        "settings": {
+          "Gain": 2,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Reverb": 2,
+          "Master": 7
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo, stock 12-inch speaker, close-miked with an SM57",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "10 (flat out)",
+            "Contour": "4",
+            "Bass": "6",
+            "Treble": "6",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Boss NS-2 Noise Suppressor (modern addition)",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "4",
+            "Decay": "5",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "Producers Kolderie and Slade confirmed the chorus tone came from the small Fender Eighty-Five on its clean channel with ALL the dirt from the ShredMaster in front - there is no Marshall stack on this record, despite the myth. The famous pre-chorus crunches are technique, not gear: fully mute the strings with the fretting hand around the 3rd fret and hit them far harder than [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 25
+  },
+  {
+    "title": "My Iron Lung",
+    "artist": "Radiohead",
+    "album": "The Bends (first issued on the My Iron Lung EP, 1994)",
+    "year": 1995,
+    "bpm": 97,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Altered - E G D G B E (A string down to G)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "G2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "12-Bit Octave Riff into ShredMaster Blast",
+      "guitar": "Fender US Telecaster Plus V1 (Red Lace Sensor Dually at the bridge for the loud",
+      "amp": {
+        "model": "Fender Eighty-Five (clean foundation; cranked to the ceiling on a few overdubs)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Reverb": 3,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo",
+      "pedals": [
+        {
+          "model": "DigiTech Whammy WH-1",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy / Harmony - Octave Up",
+            "Treadle": "Full toe-down (parked, not swept)",
+            "Blend": "Shifted signal only"
+          }
+        },
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "9",
+            "Contour": "5",
+            "Bass": "5",
+            "Treble": "6",
+            "Volume": "6"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Position": "Heel-down between phrases",
+            "Role": "Mutes the distortion - used as a crude"
+          }
+        }
+      ],
+      "notes": "The signature riff is a single octave up on the WH-1, not two - the harsh warble is the original unit's primitive 12-bit tracking, so a modern clean-tracking Whammy or a polyphonic octaver will sound too correct. Keep the pre-Whammy tone dark (roll the treble back) and switch the ShredMaster in only for the loud sections; the verse chords are amp-clean. Tuning is per The King [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 26
+  },
+  {
+    "title": "Just",
+    "artist": "Radiohead",
+    "album": "The Bends",
+    "year": 1995,
+    "bpm": 176,
+    "status": "needs-score",
+    "difficulty": "Expert",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Magazine-Inspired Riff / Runaway Whammy Solo",
+      "guitar": "Fender Telecaster Plus (bridge Lace Sensor Dually for the riff; neck pickup",
+      "amp": {
+        "model": "Fender Eighty-Five (Jonny's dirt amp through The Bends sessions)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 7,
+          "Treble": 6,
+          "Reverb": 2,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "8",
+            "Contour": "4",
+            "Bass": "5",
+            "Treble": "7",
+            "Volume": "6"
+          }
+        },
+        {
+          "model": "DigiTech Whammy WH-1",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy - 2 Octave Up (some sources",
+            "Treadle": "Swept toe-down through the solo",
+            "Blend": "Shifted signal only"
+          }
+        },
+        {
+          "model": "Demeter Tremulator (early TRM-1)",
+          "type": "Modulation",
+          "settings": {
+            "Speed": "6",
+            "Depth": "5"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Stone",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "3",
+            "Color": "Off"
+          }
+        }
+      ],
+      "notes": "The riff wants a tight, mid-forward Marshall-voiced distortion into a clean amp - keep the gain lower than you think so the angular chord voicings stay articulate. For the solo, park the Whammy toe-down and let the unit's unstable two-octave tracking do the screaming for you; the pitch chaos is the point. Flagging this one honestly as approximation: the Whammy interval, the [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 27
+  },
+  {
+    "title": "Street Spirit (Fade Out)",
+    "artist": "Radiohead",
+    "album": "The Bends",
+    "year": 1995,
+    "bpm": 138,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Flat-Tuned Arpeggio Shimmer",
+      "guitar": "Plank 'ED1' custom (Ed O'Brien's tech-built guitar: maple top, ebony board",
+      "amp": {
+        "model": "Vox AC30 (Ed's clean amp through 1994-95)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 4,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 4
+        }
+      },
+      "cab": "Trem-O-Verb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Korg A2 multi-effects rack",
+          "type": "Utility",
+          "settings": {
+            "Role": "Ed ran almost every Bends tone through",
+            "Chorus/Tremolo": "Subtle - just enough to blur the attack",
+            "Reverb": "Large hall, long tail"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Role": "Swells into the chorus sections"
+          }
+        }
+      ],
+      "notes": "The single biggest factor is pitch: the record sits noticeably flat of A440, so set your tuner to ~431-432 Hz or you will never match it. Play it clean with a lot of headroom and let reverb plus a low-mix delay do the work - there is no distortion here. The arpeggio was written by Thom but played on the record by Ed; Jonny's high chiming double is documented as the same shapes Tuning note: recorded roughly a quarter-step flat (~431-432 Hz reference). [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 28
+  },
+  {
+    "title": "Paranoid Android",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": 1997,
+    "bpm": 82,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Killswitch Stutter into Mutator Outro",
+      "guitar": "Fender Telecaster Plus (Denmark Street, 1992), later fitted with a killswitch",
+      "amp": {
+        "model": "Fender Eighty-Five (outro/high-gain path; a Vox AC30TB covers the quieter",
+        "settings": {
+          "Gain": 4,
+          "Bass": 5,
+          "Mid": 7,
+          "Treble": 6,
+          "Reverb": 2,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo for the outro; Vox AC30 2x12 with Celestion",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "9",
+            "Contour": "3",
+            "Bass": "6",
+            "Treble": "7",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Stone",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "2 - slow sweep",
+            "Color": "Off",
+            "Used on": "Early sections, through the AC30 only"
+          }
+        },
+        {
+          "model": "Mutronics Mutator",
+          "type": "Modulation",
+          "settings": {
+            "Role": "Studio only - the outro solo was",
+            "Filter": "Swept live by hand across both passes",
+            "Reproducibility": "Essentially none - treat as a target"
+          }
+        },
+        {
+          "model": "DOD 440 Envelope Filter",
+          "type": "Modulation",
+          "settings": {
+            "Range": "Nudged with the foot while playing the",
+            "Role": "Jonny's live substitute for the Mutator"
+          }
+        }
+      ],
+      "notes": "Two distinct guitar rigs in one song: Small Stone into a clean AC30 for the early sections, ShredMaster into the Fender Eighty-Five for the outro. The stuttering texture in the solo is the guitar's momentary killswitch, not a tremolo or a gate - you need a momentary (spring-return) switch, not a latching one. The closing filter-sweep solo was a post-recording rack treatment [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 29
+  },
+  {
+    "title": "No Surprises",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": 1997,
+    "bpm": 76,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 12,
+    "rig": {
+      "preset": "Music-Box Rickenbacker Chime",
+      "guitar": "Fireglo Rickenbacker 360 (its 24-fret neck is what makes a 15th-fret capo",
+      "amp": {
+        "model": "Vox AC30TB (Top Boost channel, clean)",
+        "settings": {
+          "Top Boost Volume": 4,
+          "Bass": 3,
+          "Treble": 6,
+          "Cut": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Boss RV-3 Digital Reverb/Delay",
+          "type": "Reverb",
+          "settings": {
+            "Mode": "Reverb - Plate",
+            "Time": "3",
+            "E.Level": "4",
+            "Tone": "6"
+          }
+        },
+        {
+          "model": "Boss DD-5 Digital Delay",
+          "type": "Delay",
+          "settings": {
+            "Time": "280 ms",
+            "Feedback": "1-2 repeats",
+            "E.Level": "Very low"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Holy Grail (modern substitute for the RV-3)",
+          "type": "Reverb",
+          "settings": {
+            "Mode": "Spring or Hall",
+            "Amount": "9 o'clock - barely there"
+          }
+        }
+      ],
+      "notes": "The capo at fret 15 is the entire sound: Ed played the intro figure up there on the Rickenbacker so it reads as a music box rather than a guitar, and Jonny doubled the same line on a Premier orchestral glockenspiel. Play it with a light pick attack into a clean AC30 with almost no drive and just a wash of reverb. If your neck will not take a capo at 15, fret 12 is the common [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 30
+  },
+  {
+    "title": "2 + 2 = 5",
+    "artist": "Radiohead",
+    "album": "Hail to the Thief",
+    "year": 2003,
+    "bpm": 150,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop D (D A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Clean-to-Detonation Drop D",
+      "guitar": "1970s Fender Telecaster Deluxe (Thom)",
+      "amp": {
+        "model": "Vox AC30TB (the 'Dave Peterson' AC30 was the main amp for this album)",
+        "settings": {
+          "Top Boost Volume": 7,
+          "Bass": 4,
+          "Treble": 7,
+          "Cut": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Tech 21 XXL",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "7",
+            "Hot": "6",
+            "Tone/Character": "6",
+            "Level": "Unity with the clean section"
+          }
+        },
+        {
+          "model": "ProCo Turbo RAT",
+          "type": "Distortion",
+          "settings": {
+            "Distortion": "7",
+            "Filter": "3 o'clock - dark",
+            "Volume": "Unity"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Role": "Holds the intro back to near-nothing so"
+          }
+        },
+        {
+          "model": "Line 6 DL4",
+          "type": "Delay",
+          "settings": {
+            "Model": "Sweep Echo",
+            "Time": "Dotted eighth",
+            "Repeats": "2-3",
+            "Mix": "Low - Ed's texture layer"
+          }
+        }
+      ],
+      "notes": "All three guitarists play this in Drop D, which is what lets the two-note shapes ride over the open low D pedal. The whole song is a dynamic trick: keep the intro almost amp-clean with the volume pedal well back, then stomp into full distortion for the outburst - the gap between those two states matters more than the exact distortion box. Caveat on confidence: The King of Gear [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 31
+  },
+  {
+    "title": "Bodysnatchers",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "year": 2007,
+    "bpm": 167,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop D (D A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Basement Slapback Overdrive",
+      "guitar": "1991 Fender Telecaster Plus (Jonny's From the Basement rig); Thom's studio part",
+      "amp": {
+        "model": "Vox AC30TB, normal channel (From the Basement session, April 2008)",
+        "settings": {
+          "Top Boost Volume": 6,
+          "Bass": 4,
+          "Treble": 6,
+          "Cut": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Boss OD-3 OverDrive",
+          "type": "Overdrive",
+          "settings": {
+            "Drive": "Mid-gain, roughly 11-12 o'clock",
+            "Tone": "12 o'clock",
+            "Level": "Unity to slightly above"
+          }
+        },
+        {
+          "model": "Boss RE-20 Space Echo",
+          "type": "Delay",
+          "settings": {
+            "Mode": "Single head - slapback",
+            "Repeat Rate": "Fast",
+            "Intensity": "Low - one repeat only",
+            "Echo Volume": "Low-mid",
+            "Reverb": "Off"
+          }
+        },
+        {
+          "model": "Bixonic Expandora V3",
+          "type": "Distortion",
+          "settings": {
+            "Role": "Thom's live distortion for the 2008-09",
+            "Gain": "High",
+            "Mode": "Dip-switch setting 2 - thick mid-gain"
+          }
+        }
+      ],
+      "notes": "This is the best-documented rig in the set: for the From the Basement performance Jonny's ONLY effects were a Boss OD-3 set mid-gain and an RE-20 set to a single fast slapback repeat, and he never touches either during the song. The studio version's huge distorted tone came from running the guitar through an overdriven channel on a vintage Motown mixing desk, so a desk-style [Sourcing: documented]"
+    },
+    "source": {
+      "format": "none"
+    },
+    "id": 32
   }
 ]

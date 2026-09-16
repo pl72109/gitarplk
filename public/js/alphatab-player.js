@@ -13,6 +13,7 @@
  */
 
 import { songToAlphaTex } from './ascii-to-alphatex.js';
+import { partitionTracks, describeRejected } from './guitar-tracks.js';
 
 const VENDOR_BASE = '/vendor/alphatab';
 
@@ -26,6 +27,8 @@ export class AlphaTabPlayer {
     this.scrollElement = scrollElement;
     this.api = null;
     this.score = null;
+    this.guitarTracks = []; // the only tracks this app renders or plays
+    this.rejectedTracks = []; // non-guitar parts dropped from the score
     this.isReady = false; // true once the SoundFont is decoded and playable
     this._cachedEndTick = 0;
     this._listeners = new Map();
@@ -124,14 +127,35 @@ export class AlphaTabPlayer {
       this._emit('ready');
     });
 
-    // Fired whenever a new score finishes parsing. `score.tracks` is what the
-    // mixer is built from.
+    // Fired whenever a new score finishes parsing.
+    //
+    // This is the single choke point where the app becomes guitar-only: an
+    // uploaded Guitar Pro file may contain bass, drum and vocal staves, and
+    // they are dropped here before anything downstream ever sees them. The
+    // mixer is built from `this.guitarTracks`, not from `score.tracks`.
     api.scoreLoaded.on((score) => {
       this.score = score;
       this._cachedEndTick = 0;
       this._soloed.clear();
       this._muted.clear();
-      this._emit('scoreLoaded', score);
+
+      const { guitars, rejected } = partitionTracks(score);
+      this.guitarTracks = guitars;
+      this.rejectedTracks = rejected;
+
+      if (guitars.length === 0) {
+        // Rendering an empty track list leaves a blank sheet with no
+        // explanation, so surface this as a real error instead.
+        this._emit('error', new Error('This score contains no guitar tracks. GITARPLK is guitar-only.'));
+        return;
+      }
+
+      this._applyGuitarOnly();
+
+      const notice = describeRejected(rejected);
+      if (notice) this._emit('tracksFiltered', notice);
+
+      this._emit('scoreLoaded', { score, tracks: guitars, rejected });
     });
 
     // Fired on every synth tick during playback (~50ms). Drives the progress
@@ -280,8 +304,34 @@ export class AlphaTabPlayer {
    * Mixer
    * ------------------------------------------------------------------ */
 
+  /**
+   * The guitar tracks, and only those.
+   *
+   * Everything downstream - the mixer, solo/mute bookkeeping, visibility
+   * toggles - reads this rather than `score.tracks`, so a bass or drum staff
+   * in an uploaded file can never reappear through one of those paths.
+   */
   get tracks() {
-    return this.score ? Array.from(this.score.tracks) : [];
+    return this.guitarTracks;
+  }
+
+  /**
+   * Renders only the guitar tracks and hard-mutes everything else.
+   *
+   * `renderTracks` is purely visual, so a filtered-out bass staff would still
+   * be audible without the explicit mute; both calls are needed.
+   */
+  _applyGuitarOnly() {
+    this.api.renderTracks(this.guitarTracks);
+
+    const rejectedNames = new Set(this.rejectedTracks.map((r) => r.name));
+    const silenced = Array.from(this.score.tracks).filter(
+      (track) => !this.guitarTracks.includes(track)
+    );
+    if (silenced.length) this.api.changeTrackMute(silenced, true);
+    if (rejectedNames.size) {
+      console.info('[GITARPLK] non-guitar tracks filtered out:', [...rejectedNames].join(', '));
+    }
   }
 
   setTrackVolume(track, volume) {

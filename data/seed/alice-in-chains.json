@@ -1,0 +1,479 @@
+[
+  {
+    "title": "Man in the Box",
+    "artist": "Alice in Chains",
+    "album": "Facelift",
+    "year": 1990,
+    "bpm": 106,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Talk Box Grunge Riff",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (maple neck, ebony board, Kahler trem, Seymour",
+      "amp": {
+        "model": "Bogner-modified Marshall JCM800 4010 50W combo (\"the Snorkler\")",
+        "settings": {
+          "Gain": 8,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Presence": 6,
+          "Master": 4
+        }
+      },
+      "cab": "Snorkler head into a 4x12 with '70s Greenbacks, front and rear mics blended",
+      "pedals": [
+        {
+          "model": "Dunlop Heil Talk Box",
+          "type": "Utility",
+          "settings": {
+            "Placement": "Between amp output and speaker cab",
+            "Tube position": "Taped to mic stand, in mouth",
+            "Vowel shapes": "Wide 'ah'-to-'ooh' mouth movement",
+            "Mic": "Vocal mic in front of tube, own channel"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95 (tech-modded; a Hendrix JH-1 is also cited for this era)",
+          "type": "Wah",
+          "settings": {
+            "Use": "Solo only, not the talk box intro",
+            "Sweep": "Parked slightly forward for midrange"
+          }
+        },
+        {
+          "model": "BK Butler Tube Driver",
+          "type": "Overdrive",
+          "settings": {
+            "Drive": "5",
+            "Tube Drive": "6",
+            "Level": "6",
+            "Hi": "6",
+            "Lo": "5"
+          }
+        }
+      ],
+      "notes": "Engineer Ronnie Champagne has said Facelift was essentially his own Bogner-modded JCM800 combo (\"the Snorkler\") plus a BK Butler Tube Driver for rhythms and leads, and that Cantrell picked it as the album sound on first play. The intro is a talk box blended with wah, not a wah alone; producer Dave Jerden suggested the talk box after hearing \"Livin' on a Prayer\" on the radio. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Them Bones",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 165,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Drop Db (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Drop Db Sludge Stack",
+      "guitar": "1984 G&L Rampage \"No War\" (his second Rampage, kept in drop tuning; Seymour",
+      "amp": {
+        "model": "Bogner Fish preamp into VHT power amp (lows); Bogner Ecstasy (mids); Rockman",
+        "settings": {
+          "Gain": 7,
+          "Bass": 8,
+          "Mid": 4,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 4
+        }
+      },
+      "cab": "Marshall 4x12 with Vox Bulldog speakers",
+      "pedals": [
+        {
+          "model": "Rockman X100 headphone amp (recorded direct as the top-end layer)",
+          "type": "Utility",
+          "settings": {
+            "Mode": "Distorted / Edge",
+            "Role": "Thin trebly layer stacked over the amps",
+            "Blend": "Low in the mix, per side"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95",
+          "type": "Wah",
+          "settings": {
+            "Use": "Solo accents only",
+            "Sweep": "Short, aggressive rocking"
+          }
+        }
+      ],
+      "notes": "Dirt was tracked by splitting one performance into three frequency bands with a Lucas Deceiver splitter: Dual Rectifier for lows, Bogner-modified JCM800 / Bogner Fish for the biting mids, Rockman direct on top, then double-tracked for six stacked guitars. Note that Jerden disputes Cantrell's recollection of the Dual Rectifier, so treat the exact low-end amp as contested. The [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Would?",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 100,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Fish Shark Channel Crunch",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (Seymour Duncan JB bridge humbucker)",
+      "amp": {
+        "model": "Bogner Fish preamp into VHT power amp (low layer of the three-amp Dirt split)",
+        "settings": {
+          "Gain": 7,
+          "Bass": 6,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Rockman X100 headphone amp (direct top-end layer)",
+          "type": "Utility",
+          "settings": {
+            "Mode": "Distorted",
+            "Role": "High-frequency doubling layer",
+            "Blend": "Subtle"
+          }
+        }
+      ],
+      "notes": "Contrary to a common assumption this is not drop D: transcriptions consistently give plain Eb standard, with the weight coming from the arrangement rather than a dropped sixth string. The Fish's Shark channel is the documented home of Cantrell's core rhythm voicing; aim for controlled rather than scooped bass so the chords keep note definition under the vocal. Restrained gain [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Rooster",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 72,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Flanged Clean to Wah Lead",
+      "guitar": "1984 G&L Rampage \"Blue Dress\"",
+      "amp": {
+        "model": "Bogner-modified Marshall JCM800 (\"the Snorkler\"), clean-edge for the intro and",
+        "settings": {
+          "Gain": 4,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Electro-Harmonix Electric Mistress",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "Slow, roughly 9 o'clock",
+            "Range": "5",
+            "Color / Feedback": "Low - subtle swirl, no jet-plane whoosh",
+            "Filter Matrix": "Off"
+          }
+        },
+        {
+          "model": "Dunlop Cry Baby GCB-95",
+          "type": "Wah",
+          "settings": {
+            "Use": "Outro solo",
+            "Sweep": "Slow, wide, in time with the phrasing"
+          }
+        }
+      ],
+      "notes": "The swirling intro is a flanger, not a chorus - the Electric Mistress is Cantrell's documented flanger of choice and its flange/chorus hybrid voicing is exactly why people mishear it. Keep feedback low so the metallic edge stays subtle. A Boss BF-2 is the commonly reported substitute. Most tabs give plain Eb standard; a minority transcription claims the G string is dropped a [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Down in a Hole",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "bpm": 95,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Fingerpicked Clean / Heavy Chorus Swell",
+      "guitar": "1984 G&L Rampage \"Blue Dress\" (neck-position clean for verses); Guild JF30",
+      "amp": {
+        "model": "Fender Twin Reverb for the clean arpeggios, Bogner-modified JCM800 for the",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 5
+        }
+      },
+      "cab": "Twin Reverb 2x12 (Jensen/Oxford-voiced cleans); Marshall 1960B 4x12 with",
+      "pedals": [
+        {
+          "model": "Boss CE-5 Chorus Ensemble (or CH-1 Super Chorus)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow, around 9 o'clock",
+            "Depth": "4",
+            "E.Level": "5",
+            "Filter": "Full range"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "3-4 - long-tail ambience, not a wash"
+          }
+        }
+      ],
+      "notes": "Eb standard is the baseline for both the Dirt and Unplugged versions. The intro is the one spot where Cantrell fingerpicks melodic content out of the chord shapes, so set the clean tone with enough compression and sustain for individual notes to ring across the bar. No per-song rig breakdown has been published for this track, so the clean chain here is inferred from his [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Nutshell",
+    "artist": "Alice in Chains",
+    "album": "Jar of Flies",
+    "year": 1994,
+    "bpm": 68,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Twin Reverb Clean Ballad",
+      "guitar": "Guild acoustic (Cantrell's documented main acoustic of the era)",
+      "amp": {
+        "model": "Fender Twin Reverb",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Presence": 4,
+          "Master": 4
+        }
+      },
+      "cab": "Fender Twin Reverb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Boss CH-1 Super Chorus",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow",
+            "Depth": "3",
+            "E.Level": "4",
+            "EQ": "5"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "4"
+          }
+        }
+      ],
+      "notes": "Jar of Flies was tracked at London Bridge Studio in September 1993 and its cleaner, more ethereal sound is widely credited to the Fender Twin Reverb rather than the Marshall/Bogner stack - the Roland JC-120 often associated with Cantrell is not documented for these sessions. The lead break wants amp breakup from volume and pick attack, not a distortion pedal: roll the guitar [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "No Excuses",
+    "artist": "Alice in Chains",
+    "album": "Jar of Flies",
+    "year": 1994,
+    "bpm": 117,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Eb2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Jangly Open-String Clean",
+      "guitar": "G&L Rampage \"Blue Dress\"",
+      "amp": {
+        "model": "Fender Twin Reverb",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 5,
+          "Treble": 7,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Fender Twin Reverb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Boss CE-5 Chorus Ensemble",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "Slow",
+            "Depth": "3",
+            "E.Level": "4",
+            "Filter": "Full"
+          }
+        },
+        {
+          "model": "Amp spring reverb",
+          "type": "Reverb",
+          "settings": {
+            "Reverb": "3"
+          }
+        }
+      ],
+      "notes": "Eb standard, no capo - the capo 3 arrangements circulating online are transposed beginner versions, not what Cantrell played. The signature jangle comes from barre shapes moving against ringing open top strings, so set a bright, uncompressed clean and let the open strings bloom. Watch the fret positions: tuned down a half step the verse shapes sit at the 5th and 7th frets, a [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Check My Brain",
+    "artist": "Alice in Chains",
+    "album": "Black Gives Way to Blue",
+    "year": 2009,
+    "bpm": 114,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop C# / Drop Db (Db Ab Db Gb Bb Eb)",
+    "tuningPitches": [
+      "Eb4",
+      "Bb3",
+      "Gb3",
+      "Db3",
+      "Ab2",
+      "Db2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Seasick Modern Drop Riff",
+      "guitar": "Gibson Les Paul Custom, or the G&L Rampage; Motor City bridge pickup",
+      "amp": {
+        "model": "Dave Friedman-built \"Marsha\" 50W Marshall-style head (Bogner Fish preamp also",
+        "settings": {
+          "Gain": 7,
+          "Bass": 6,
+          "Mid": 7,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Marshall 1960B 4x12 with 25W Celestion Greenbacks",
+      "pedals": [
+        {
+          "model": "Dunlop JC95 Jerry Cantrell Signature Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Volume": "Unity",
+            "Q": "Mid-range, factory",
+            "Use": "Lead sections"
+          }
+        },
+        {
+          "model": "MXR Smart Gate",
+          "type": "Utility",
+          "settings": {
+            "Trigger": "Low",
+            "Mode": "Mid",
+            "Purpose": "Tighten the gaps between drop-tuned"
+          }
+        },
+        {
+          "model": "ISP Decimator",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "Set just above the rig's noise floor"
+          }
+        }
+      ],
+      "notes": "Transcriptions vary between drop D, drop C# and Eb standard, but the record sits in drop Db/C# - drop-D shapes moved down a half step. The lurching \"seasick\" character is fretting-hand, not a whammy bar: Cantrell described it as slightly out of tune, not quite a full bend, a two-note idea he credits to listening to Iommi. Album amps reportedly included the Bogner Fish [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  }
+]

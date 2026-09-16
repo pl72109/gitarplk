@@ -1,0 +1,556 @@
+[
+  {
+    "title": "Creep",
+    "artist": "Radiohead",
+    "album": "Pablo Honey",
+    "year": 1993,
+    "bpm": 92,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Denmark Street Chorus Stab",
+      "guitar": "1992 Fender Telecaster Plus (Blue Lace Sensor neck, dual Red Lace Sensor",
+      "amp": {
+        "model": "Fender Eighty-Five (solid-state combo, CLEAN channel only)",
+        "settings": {
+          "Gain": 2,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 7,
+          "Reverb": 2,
+          "Master": 7
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo, stock 12-inch speaker, close-miked with an SM57",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "10 (flat out)",
+            "Contour": "4",
+            "Bass": "6",
+            "Treble": "6",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Boss NS-2 Noise Suppressor (modern addition)",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "4",
+            "Decay": "5",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "Producers Kolderie and Slade confirmed the chorus tone came from the small Fender Eighty-Five on its clean channel with ALL the dirt from the ShredMaster in front - there is no Marshall stack on this record, despite the myth. The famous pre-chorus crunches are technique, not gear: fully mute the strings with the fretting hand around the 3rd fret and hit them far harder than [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "My Iron Lung",
+    "artist": "Radiohead",
+    "album": "The Bends (first issued on the My Iron Lung EP, 1994)",
+    "year": 1995,
+    "bpm": 97,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Altered - E G D G B E (A string down to G)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "G2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "12-Bit Octave Riff into ShredMaster Blast",
+      "guitar": "Fender US Telecaster Plus V1 (Red Lace Sensor Dually at the bridge for the loud",
+      "amp": {
+        "model": "Fender Eighty-Five (clean foundation; cranked to the ceiling on a few overdubs)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 6,
+          "Treble": 6,
+          "Reverb": 3,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo",
+      "pedals": [
+        {
+          "model": "DigiTech Whammy WH-1",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy / Harmony - Octave Up",
+            "Treadle": "Full toe-down (parked, not swept)",
+            "Blend": "Shifted signal only"
+          }
+        },
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "9",
+            "Contour": "5",
+            "Bass": "5",
+            "Treble": "6",
+            "Volume": "6"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Position": "Heel-down between phrases",
+            "Role": "Mutes the distortion - used as a crude"
+          }
+        }
+      ],
+      "notes": "The signature riff is a single octave up on the WH-1, not two - the harsh warble is the original unit's primitive 12-bit tracking, so a modern clean-tracking Whammy or a polyphonic octaver will sound too correct. Keep the pre-Whammy tone dark (roll the treble back) and switch the ShredMaster in only for the loud sections; the verse chords are amp-clean. Tuning is per The King [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Just",
+    "artist": "Radiohead",
+    "album": "The Bends",
+    "year": 1995,
+    "bpm": 176,
+    "status": "needs-score",
+    "difficulty": "Expert",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Magazine-Inspired Riff / Runaway Whammy Solo",
+      "guitar": "Fender Telecaster Plus (bridge Lace Sensor Dually for the riff; neck pickup",
+      "amp": {
+        "model": "Fender Eighty-Five (Jonny's dirt amp through The Bends sessions)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 7,
+          "Treble": 6,
+          "Reverb": 2,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "8",
+            "Contour": "4",
+            "Bass": "5",
+            "Treble": "7",
+            "Volume": "6"
+          }
+        },
+        {
+          "model": "DigiTech Whammy WH-1",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy - 2 Octave Up (some sources",
+            "Treadle": "Swept toe-down through the solo",
+            "Blend": "Shifted signal only"
+          }
+        },
+        {
+          "model": "Demeter Tremulator (early TRM-1)",
+          "type": "Modulation",
+          "settings": {
+            "Speed": "6",
+            "Depth": "5"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Stone",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "3",
+            "Color": "Off"
+          }
+        }
+      ],
+      "notes": "The riff wants a tight, mid-forward Marshall-voiced distortion into a clean amp - keep the gain lower than you think so the angular chord voicings stay articulate. For the solo, park the Whammy toe-down and let the unit's unstable two-octave tracking do the screaming for you; the pitch chaos is the point. Flagging this one honestly as approximation: the Whammy interval, the [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Street Spirit (Fade Out)",
+    "artist": "Radiohead",
+    "album": "The Bends",
+    "year": 1995,
+    "bpm": 138,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Flat-Tuned Arpeggio Shimmer",
+      "guitar": "Plank 'ED1' custom (Ed O'Brien's tech-built guitar: maple top, ebony board",
+      "amp": {
+        "model": "Vox AC30 (Ed's clean amp through 1994-95)",
+        "settings": {
+          "Gain": 3,
+          "Bass": 5,
+          "Mid": 4,
+          "Treble": 6,
+          "Presence": 5,
+          "Master": 4
+        }
+      },
+      "cab": "Trem-O-Verb 2x12 combo",
+      "pedals": [
+        {
+          "model": "Korg A2 multi-effects rack",
+          "type": "Utility",
+          "settings": {
+            "Role": "Ed ran almost every Bends tone through",
+            "Chorus/Tremolo": "Subtle - just enough to blur the attack",
+            "Reverb": "Large hall, long tail"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Role": "Swells into the chorus sections"
+          }
+        }
+      ],
+      "notes": "The single biggest factor is pitch: the record sits noticeably flat of A440, so set your tuner to ~431-432 Hz or you will never match it. Play it clean with a lot of headroom and let reverb plus a low-mix delay do the work - there is no distortion here. The arpeggio was written by Thom but played on the record by Ed; Jonny's high chiming double is documented as the same shapes Tuning note: recorded roughly a quarter-step flat (~431-432 Hz reference). [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Paranoid Android",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": 1997,
+    "bpm": 82,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Killswitch Stutter into Mutator Outro",
+      "guitar": "Fender Telecaster Plus (Denmark Street, 1992), later fitted with a killswitch",
+      "amp": {
+        "model": "Fender Eighty-Five (outro/high-gain path; a Vox AC30TB covers the quieter",
+        "settings": {
+          "Gain": 4,
+          "Bass": 5,
+          "Mid": 7,
+          "Treble": 6,
+          "Reverb": 2,
+          "Master": 8
+        }
+      },
+      "cab": "Fender Eighty-Five 1x12 combo for the outro; Vox AC30 2x12 with Celestion",
+      "pedals": [
+        {
+          "model": "Marshall ShredMaster",
+          "type": "Distortion",
+          "settings": {
+            "Gain": "9",
+            "Contour": "3",
+            "Bass": "6",
+            "Treble": "7",
+            "Volume": "7"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Small Stone",
+          "type": "Modulation",
+          "settings": {
+            "Rate": "2 - slow sweep",
+            "Color": "Off",
+            "Used on": "Early sections, through the AC30 only"
+          }
+        },
+        {
+          "model": "Mutronics Mutator",
+          "type": "Modulation",
+          "settings": {
+            "Role": "Studio only - the outro solo was",
+            "Filter": "Swept live by hand across both passes",
+            "Reproducibility": "Essentially none - treat as a target"
+          }
+        },
+        {
+          "model": "DOD 440 Envelope Filter",
+          "type": "Modulation",
+          "settings": {
+            "Range": "Nudged with the foot while playing the",
+            "Role": "Jonny's live substitute for the Mutator"
+          }
+        }
+      ],
+      "notes": "Two distinct guitar rigs in one song: Small Stone into a clean AC30 for the early sections, ShredMaster into the Fender Eighty-Five for the outro. The stuttering texture in the solo is the guitar's momentary killswitch, not a tremolo or a gate - you need a momentary (spring-return) switch, not a latching one. The closing filter-sweep solo was a post-recording rack treatment [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "No Surprises",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": 1997,
+    "bpm": 76,
+    "status": "needs-score",
+    "difficulty": "Beginner",
+    "tuning": "Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 12,
+    "rig": {
+      "preset": "Music-Box Rickenbacker Chime",
+      "guitar": "Fireglo Rickenbacker 360 (its 24-fret neck is what makes a 15th-fret capo",
+      "amp": {
+        "model": "Vox AC30TB (Top Boost channel, clean)",
+        "settings": {
+          "Top Boost Volume": 4,
+          "Bass": 3,
+          "Treble": 6,
+          "Cut": 5,
+          "Master": 5
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Boss RV-3 Digital Reverb/Delay",
+          "type": "Reverb",
+          "settings": {
+            "Mode": "Reverb - Plate",
+            "Time": "3",
+            "E.Level": "4",
+            "Tone": "6"
+          }
+        },
+        {
+          "model": "Boss DD-5 Digital Delay",
+          "type": "Delay",
+          "settings": {
+            "Time": "280 ms",
+            "Feedback": "1-2 repeats",
+            "E.Level": "Very low"
+          }
+        },
+        {
+          "model": "Electro-Harmonix Holy Grail (modern substitute for the RV-3)",
+          "type": "Reverb",
+          "settings": {
+            "Mode": "Spring or Hall",
+            "Amount": "9 o'clock - barely there"
+          }
+        }
+      ],
+      "notes": "The capo at fret 15 is the entire sound: Ed played the intro figure up there on the Rickenbacker so it reads as a music box rather than a guitar, and Jonny doubled the same line on a Premier orchestral glockenspiel. Play it with a light pick attack into a clean AC30 with almost no drive and just a wash of reverb. If your neck will not take a capo at 15, fret 12 is the common [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "2 + 2 = 5",
+    "artist": "Radiohead",
+    "album": "Hail to the Thief",
+    "year": 2003,
+    "bpm": 150,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop D (D A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Clean-to-Detonation Drop D",
+      "guitar": "1970s Fender Telecaster Deluxe (Thom)",
+      "amp": {
+        "model": "Vox AC30TB (the 'Dave Peterson' AC30 was the main amp for this album)",
+        "settings": {
+          "Top Boost Volume": 7,
+          "Bass": 4,
+          "Treble": 7,
+          "Cut": 4,
+          "Master": 7
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Tech 21 XXL",
+          "type": "Distortion",
+          "settings": {
+            "Drive": "7",
+            "Hot": "6",
+            "Tone/Character": "6",
+            "Level": "Unity with the clean section"
+          }
+        },
+        {
+          "model": "ProCo Turbo RAT",
+          "type": "Distortion",
+          "settings": {
+            "Distortion": "7",
+            "Filter": "3 o'clock - dark",
+            "Volume": "Unity"
+          }
+        },
+        {
+          "model": "Boss FV-300L Volume Pedal",
+          "type": "Utility",
+          "settings": {
+            "Role": "Holds the intro back to near-nothing so"
+          }
+        },
+        {
+          "model": "Line 6 DL4",
+          "type": "Delay",
+          "settings": {
+            "Model": "Sweep Echo",
+            "Time": "Dotted eighth",
+            "Repeats": "2-3",
+            "Mix": "Low - Ed's texture layer"
+          }
+        }
+      ],
+      "notes": "All three guitarists play this in Drop D, which is what lets the two-note shapes ride over the open low D pedal. The whole song is a dynamic trick: keep the intro almost amp-clean with the volume pedal well back, then stomp into full distortion for the outburst - the gap between those two states matters more than the exact distortion box. Caveat on confidence: The King of Gear [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Bodysnatchers",
+    "artist": "Radiohead",
+    "album": "In Rainbows",
+    "year": 2007,
+    "bpm": 167,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "Drop D (D A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Basement Slapback Overdrive",
+      "guitar": "1991 Fender Telecaster Plus (Jonny's From the Basement rig); Thom's studio part",
+      "amp": {
+        "model": "Vox AC30TB, normal channel (From the Basement session, April 2008)",
+        "settings": {
+          "Top Boost Volume": 6,
+          "Bass": 4,
+          "Treble": 6,
+          "Cut": 5,
+          "Master": 6
+        }
+      },
+      "cab": "Vox AC30 2x12 with Celestion Alnico Blues",
+      "pedals": [
+        {
+          "model": "Boss OD-3 OverDrive",
+          "type": "Overdrive",
+          "settings": {
+            "Drive": "Mid-gain, roughly 11-12 o'clock",
+            "Tone": "12 o'clock",
+            "Level": "Unity to slightly above"
+          }
+        },
+        {
+          "model": "Boss RE-20 Space Echo",
+          "type": "Delay",
+          "settings": {
+            "Mode": "Single head - slapback",
+            "Repeat Rate": "Fast",
+            "Intensity": "Low - one repeat only",
+            "Echo Volume": "Low-mid",
+            "Reverb": "Off"
+          }
+        },
+        {
+          "model": "Bixonic Expandora V3",
+          "type": "Distortion",
+          "settings": {
+            "Role": "Thom's live distortion for the 2008-09",
+            "Gain": "High",
+            "Mode": "Dip-switch setting 2 - thick mid-gain"
+          }
+        }
+      ],
+      "notes": "This is the best-documented rig in the set: for the From the Basement performance Jonny's ONLY effects were a Boss OD-3 set mid-gain and an RE-20 set to a single fast slapback repeat, and he never touches either during the song. The studio version's huge distorted tone came from running the guitar through an overdriven channel on a vintage Motown mixing desk, so a desk-style [Sourcing: documented]"
+    },
+    "source": {
+      "format": "none"
+    }
+  }
+]

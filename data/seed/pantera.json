@@ -1,0 +1,687 @@
+[
+  {
+    "title": "Cowboys from Hell",
+    "artist": "Pantera",
+    "album": "Cowboys from Hell",
+    "year": 1990,
+    "bpm": 115,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Carpeted Randall Cowboy Crunch",
+      "guitar": "Dean ML \"Dean From Hell\" (1981, Bill Lawrence L-500XL bridge, Floyd Rose)",
+      "amp": {
+        "model": "Randall RG100ES (120W solid-state, carpeted head)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB 4x12 with Jaguar 60s; 412CB with Celestions for cleans",
+      "pedals": [
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed - the peak of the curve)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Furman PQ-3 / PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9 (driven hard to push the amp's front",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7 (medium-wide)",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8 (narrow)",
+            "High Freq": "just under 4 kHz",
+            "High Bandwidth": "~7"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer / Hush 2-B",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~11 o'clock",
+            "Placement": "last in the chain, in front of the amp"
+          }
+        },
+        {
+          "model": "MXR MX-126 Flanger/Doubler (rack)",
+          "type": "Modulation",
+          "settings": {
+            "Mode": "Flange",
+            "Width": "5",
+            "Speed": "2 (slow)",
+            "Regeneration": "4",
+            "Manual": "5",
+            "Mix": "low - thickening, not swooshing"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Q": "5-6",
+            "Range": "mid sweep",
+            "Boost": "unity"
+          }
+        }
+      ],
+      "notes": "The whole chain lives in FRONT of the amp - Furman into the MXR 6-band into the gate - so the two EQs act as one giant gain stage rather than a tone tweak; only the Flanger/Doubler sat in the loop, and it is what gives the intro its shimmer. Do not scoop the mids: the 800 Hz slider should be the highest point of the curve, which is what keeps this amp from sounding like fizzy Tuning note: recorded roughly a quarter step flat (reference pitch A≈428 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Cemetery Gates",
+    "artist": "Pantera",
+    "album": "Cowboys from Hell",
+    "year": 1990,
+    "bpm": 146,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Clean Arpeggio to Squealing Lead",
+      "guitar": "Dean ML \"Dean From Hell\" (blue 1981 ML, Bill Lawrence L-500XL bridge, Floyd",
+      "amp": {
+        "model": "Randall RG100ES (clean channel for the intro, dirty channel for the heavy",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412CB 4x12 with Celestions for the clean parts, Randall 412JB 4x12 with",
+      "pedals": [
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+12 dB",
+            "3.2 kHz": "+15 dB"
+          }
+        },
+        {
+          "model": "Furman PQ-3 / PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer / Hush 2-B",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~10 o'clock (light, so sustained notes",
+            "Placement": "in front of the amp"
+          }
+        },
+        {
+          "model": "Rack chorus/reverb (Yamaha SPX90 or Korg G3 style)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "slow",
+            "Depth": "moderate",
+            "Mix": "~30% on the clean intro only"
+          }
+        }
+      ],
+      "notes": "Dimebag's tech has said he had no Whammy pedal yet in 1990, so the famous squeals here are pinch harmonics dragged up with the Floyd Rose, not a pitch shifter - keep the gate threshold low so those harmonics sustain and feed back. The clean intro is the same amp with the guitar volume rolled back plus a rack chorus; the exact 1990 clean path is not well documented, so treat Tuning note: recorded roughly a quarter step flat (reference pitch A≈428-434 Hz). [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Mouth for War",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 157,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Vulgar Front-End Punch",
+      "guitar": "Dean ML (blue 1981 \"Dean From Hell\" - his standard-tuning guitar, Bill Lawrence",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9 (hot, used as a boost)",
+            "Low Freq": "~150 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock (tight, for the staccato",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby (leads only)",
+          "type": "Wah",
+          "settings": {
+            "Q": "6",
+            "Range": "mid-to-upper sweep",
+            "Use": "lead sections only"
+          }
+        }
+      ],
+      "notes": "Dimebag described the Vulgar chain himself as guitar into a Furman PQ-4, then the blue MXR six-band, then a Rocktron Hush, then the amps - and that is about it, so resist adding a distortion pedal. The percussive attack comes from a hard gate plus the treble-heavy solid-state clip, not from more gain. Tuning note: a quarter step flat - his tech described it as tuning to Eb then raising each string about 40 cents. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Walk",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 118,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Swaggering Down-Tuned Groove",
+      "guitar": "Dean ML, tobacco-sunburst 1979 model - Dimebag's stated down-tuned guitar",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 4,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz (lower, to suit D standard)",
+            "Low Boost": "+9",
+            "Mid Freq": "~850 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+15 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby",
+          "type": "Wah",
+          "settings": {
+            "Q": "6-7",
+            "Range": "upper sweep for the lead",
+            "Use": "solo only - parked and rocked hard"
+          }
+        }
+      ],
+      "notes": "Heavier strings go on for the drop to D - Dime ran .009-.050 sets on his down-tuned guitars rather than a standard .009-.046 - and the 12/8 riff depends on a tight gate and lots of pick attack, so push the Furman input rather than the amp's gain if it sounds soft. For period-correct pitch, set your tuner's reference to about 425 Hz and then tune to D standard. Tuning note: a quarter step flat (reference pitch A≈425 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "This Love",
+    "artist": "Pantera",
+    "album": "Vulgar Display of Power",
+    "year": 1992,
+    "bpm": 105,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "E Standard (E A D G B E)",
+    "tuningPitches": [
+      "E4",
+      "B3",
+      "G3",
+      "D3",
+      "A2",
+      "E2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Chorused Clean into Crushing Chorus",
+      "guitar": "Dean ML, tobacco-sunburst (down-tuned guitar), bridge pickup for the heavy",
+      "amp": {
+        "model": "Randall Century 200 II; Mesa/Boogie Mark IV clean channel via the Bradshaw",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412CB 4x12 with Celestions for cleans, Randall 412JB 4x12 with Jaguar",
+      "pedals": [
+        {
+          "model": "Rack chorus (Yamaha SPX90 / Korg G3)",
+          "type": "Chorus",
+          "settings": {
+            "Rate": "slow",
+            "Depth": "deep - the intro riff is openly chorused",
+            "Mix": "~40% on the verse, off for the heavy"
+          }
+        },
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+12 dB",
+            "3.2 kHz": "+14 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~11 o'clock",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "The whole dynamic of the song is one rig at two volumes - the clean verse is widely described as the same setup with the guitar volume rolled back and a chorus over it, then everything opens up for the chorus. The clean-side signal path is the least documented part of the Vulgar rig, so the chorus unit and its settings here are a reconstruction rather than a published spec. Tuning note: recorded roughly a quarter step flat. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Becoming",
+    "artist": "Pantera",
+    "album": "Far Beyond Driven",
+    "year": 1994,
+    "bpm": 130,
+    "status": "needs-score",
+    "difficulty": "Intermediate",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Two-Octave Whammy Squeal",
+      "guitar": "Dean ML, tobacco-sunburst 1979 ML Standard (Floyd Rose, DiMarzio bridge)",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "DigiTech WH-1 Whammy",
+          "type": "Pitch",
+          "settings": {
+            "Mode": "Whammy (not Harmony)",
+            "Interval": "2 Octaves Up (+2 OCT)",
+            "Mix": "100% wet",
+            "Treadle": "heel = dry pitch, toe = two octaves up"
+          }
+        },
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+9",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12 o'clock",
+            "Mode": "Reduction"
+          }
+        }
+      ],
+      "notes": "This is the defining +2 octave Whammy track - Dimebag confirmed the two-octaves-up setting in interviews, and the effect only works if the source is a screaming pinch harmonic into a maxed front end, since the WH-1 needs a strong single pitch to track. Live he kept two Whammys, one onstage and a second backstage worked by his tech, so he did not have to stand on the pedal for Tuning note: a quarter step flat - the record sits audibly between C# and D standard. [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "I'm Broken",
+    "artist": "Pantera",
+    "album": "Far Beyond Driven",
+    "year": 1994,
+    "bpm": 147,
+    "status": "needs-score",
+    "difficulty": "Advanced",
+    "tuning": "D Standard (D G C F A D)",
+    "tuningPitches": [
+      "D4",
+      "A3",
+      "F3",
+      "C3",
+      "G2",
+      "D2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Soundcheck Riff Grind",
+      "guitar": "Dean ML, tobacco-sunburst 1979 ML Standard (Floyd Rose, DiMarzio bridge)",
+      "amp": {
+        "model": "Randall Century 200 II (125W solid-state)",
+        "settings": {
+          "Gain": 10,
+          "Bass": 8,
+          "Mid": 3,
+          "Treble": 5,
+          "Presence": 8,
+          "Master": 7
+        }
+      },
+      "cab": "Randall 412JB straight 4x12, 80-watt Jaguar speakers",
+      "pedals": [
+        {
+          "model": "Furman PQ-4 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "9",
+            "Low Freq": "~130 Hz",
+            "Low Boost": "+9",
+            "Low Bandwidth": "~7",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+12",
+            "Mid Bandwidth": "~8",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+10 dB",
+            "200 Hz": "+10 dB",
+            "400 Hz": "+9 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+13 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Hush 2-B / Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~12-1 o'clock (aggressive, for the",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Dunlop GCB-95 Cry Baby (leads only)",
+          "type": "Wah",
+          "settings": {
+            "Q": "6",
+            "Range": "upper-mid sweep",
+            "Use": "lead only"
+          }
+        }
+      ],
+      "notes": "Dimebag said the main riff fell out of a soundcheck, and it wants a very fast-closing gate so the gaps between hits go dead silent - that silence is half the groove. Around Far Beyond Driven he described his onstage floor chain as just a Dunlop wah and the Whammy, with the two EQs and the noise reduction living in the rack. Tuning note: a quarter step flat (reference pitch A≈425 Hz). [Sourcing: widely-reported]"
+    },
+    "source": {
+      "format": "none"
+    }
+  },
+  {
+    "title": "Floods",
+    "artist": "Pantera",
+    "album": "The Great Southern Trendkill",
+    "year": 1996,
+    "bpm": 121,
+    "status": "needs-score",
+    "difficulty": "Expert",
+    "tuning": "C# Standard (C# F# B E G# C#)",
+    "tuningPitches": [
+      "C#4",
+      "G#3",
+      "E3",
+      "B2",
+      "F#2",
+      "C#2"
+    ],
+    "capo": 0,
+    "rig": {
+      "preset": "Trendkill Ballad and Outro Solo",
+      "guitar": "Washburn Dime 3 (Bill Lawrence L-500XL bridge, Seymour Duncan '59 neck)",
+      "amp": {
+        "model": "Randall RG100ES - Dime pulled the old carpeted head he cut Cowboys from Hell",
+        "settings": {
+          "Gain": 9,
+          "Bass": 7,
+          "Mid": 4,
+          "Treble": 5,
+          "Presence": 7,
+          "Master": 6
+        }
+      },
+      "cab": "Randall 412JB 4x12 with Jaguar speakers for the heavy and lead tones; Randall",
+      "pedals": [
+        {
+          "model": "Furman PQ-3 Parametric EQ",
+          "type": "EQ",
+          "settings": {
+            "Input Level": "8 (the PQ-3 has a different gain",
+            "Low Freq": "~120 Hz",
+            "Low Boost": "+8",
+            "Mid Freq": "~900 Hz",
+            "Mid Boost": "+11",
+            "High Freq": "just under 4 kHz"
+          }
+        },
+        {
+          "model": "MXR MX-109 Six-Band Graphic EQ (blue)",
+          "type": "EQ",
+          "settings": {
+            "100 Hz": "+9 dB",
+            "200 Hz": "+9 dB",
+            "400 Hz": "+8 dB",
+            "800 Hz": "+18 dB (maxed)",
+            "1.6 kHz": "+14 dB",
+            "3.2 kHz": "+16 dB"
+          }
+        },
+        {
+          "model": "Rocktron Guitar Silencer",
+          "type": "Utility",
+          "settings": {
+            "Threshold": "~9-10 o'clock (barely on, so the outro",
+            "Mode": "Reduction"
+          }
+        },
+        {
+          "model": "Vox V847 Wah",
+          "type": "Wah",
+          "settings": {
+            "Use": "outro lead swells",
+            "Position": "rocked slowly, often half-parked"
+          }
+        },
+        {
+          "model": "Rack delay/reverb (Yamaha SPX90 / Korg G-series)",
+          "type": "Delay",
+          "settings": {
+            "Time": "~400 ms",
+            "Feedback": "2-3 repeats",
+            "Mix": "~25% on the lead, more on the clean"
+          }
+        }
+      ],
+      "notes": "The outro solo - voted one of the greatest of all time by Guitar World - is almost entirely sustain and Floyd Rose bar work, so open the noise gate further than you would for the riff songs and stand close enough to the cab to get controlled feedback. Dimebag used a Vox V847 early in the Trendkill sessions before moving to a rack Dunlop; the exact per-song delay unit is not Tuning note: recorded slightly flat. [Sourcing: approximation]"
+    },
+    "source": {
+      "format": "none"
+    }
+  }
+]

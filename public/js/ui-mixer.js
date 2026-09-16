@@ -1,38 +1,56 @@
 /**
- * Track mixer: one row per instrument in the score, with mute, solo, a volume
- * fader and a visibility toggle.
+ * Guitar mixer: one row per guitar part in the score, with mute, solo, a
+ * volume fader and a visibility toggle.
+ *
+ * Only guitar tracks reach this component. Bass, drum and other staves are
+ * stripped from the score by guitar-tracks.js before `scoreLoaded` fires, so
+ * there is deliberately no instrument switch or per-instrument grouping here -
+ * every row is a guitar.
  *
  * Rebuilt from scratch on every `scoreLoaded`, since the track list belongs to
  * the score.
  */
 
 export class TrackMixer {
-  constructor(player, listElement, countElement) {
+  constructor(player, listElement, countElement, noticeElement) {
     this.player = player;
     this.listElement = listElement;
     this.countElement = countElement;
+    this.noticeElement = noticeElement;
     this.visible = new Set(); // track indices currently drawn in the score
 
-    // `score.tracks` is only populated after the score has been parsed.
-    player.on('scoreLoaded', (score) => this.render(score));
+    // The payload is already filtered to guitars by AlphaTabPlayer.
+    player.on('scoreLoaded', ({ tracks, rejected }) => this.render(tracks, rejected));
   }
 
-  render(score) {
-    const tracks = Array.from(score.tracks);
+  render(tracks, rejected = []) {
     this.listElement.innerHTML = '';
     this.visible = new Set(tracks.map((t) => t.index));
 
     if (this.countElement) {
-      this.countElement.textContent = `${tracks.length} track${tracks.length === 1 ? '' : 's'}`;
+      const n = tracks.length;
+      this.countElement.textContent = `${n} guitar track${n === 1 ? '' : 's'}`;
+    }
+
+    // Tell the user why a multi-track file came in with fewer parts than they
+    // expected, rather than letting it look like a failed import.
+    if (this.noticeElement) {
+      if (rejected.length) {
+        const names = rejected.map((r) => r.name).join(', ');
+        this.noticeElement.textContent = `Guitar-only: filtered out ${names}`;
+        this.noticeElement.classList.remove('hidden');
+      } else {
+        this.noticeElement.classList.add('hidden');
+      }
     }
 
     tracks.forEach((track) => {
       this.listElement.appendChild(this._buildRow(track));
     });
 
-    // AlphaTab renders only the first track by default. Draw them all so the
-    // score matches the visibility toggles the mixer is showing as active.
-    if (tracks.length > 1) this.player.renderTracks(tracks);
+    // AlphaTab renders only the first track by default. The player already
+    // called renderTracks with the full guitar set, so the visibility toggles
+    // and the score agree from the start.
   }
 
   _buildRow(track) {
@@ -40,8 +58,9 @@ export class TrackMixer {
     row.className = 'mixer-row';
     row.dataset.trackIndex = String(track.index);
 
-    // `track.name` comes from the file; fall back to the MIDI program.
-    const name = track.name || `Track ${track.index + 1}`;
+    // `track.name` comes from the file; every row here is a guitar part, so
+    // the fallback says so rather than a generic "Track N".
+    const name = track.name || `Guitar ${track.index + 1}`;
 
     row.innerHTML = `
       <button class="mx-visible active" title="Show/hide in score" aria-label="Toggle visibility">◉</button>

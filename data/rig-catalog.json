@@ -1,0 +1,101 @@
+{
+  "_comment": "Reference data for the Add Song rig editor. Amps, cabs, pedals and tunings are picklist options only - a song's actual rig lives on the song record itself. Guitar only; no bass or drum gear.",
+
+  "tunings": [
+    { "name": "Standard (E A D G B E)", "pitches": ["E4", "B3", "G3", "D3", "A2", "E2"] },
+    { "name": "Drop D (D A D G B E)", "pitches": ["E4", "B3", "G3", "D3", "A2", "D2"] },
+    { "name": "Eb Standard (Eb Ab Db Gb Bb Eb)", "pitches": ["Eb4", "Bb3", "Gb3", "Db3", "Ab2", "Eb2"] },
+    { "name": "Eb Drop Db", "pitches": ["Eb4", "Bb3", "Gb3", "Db3", "Ab2", "Db2"] },
+    { "name": "D Standard (D G C F A D)", "pitches": ["D4", "A3", "F3", "C3", "G2", "D2"] },
+    { "name": "Drop C (C G C F A D)", "pitches": ["D4", "A3", "F3", "C3", "G2", "C2"] },
+    { "name": "C# Standard", "pitches": ["C#4", "G#3", "E3", "B2", "F#2", "C#2"] },
+    { "name": "Drop C# (C# G# C# F# A# D#)", "pitches": ["D#4", "A#3", "F#3", "C#3", "G#2", "C#2"] },
+    { "name": "Open D (D A D F# A D)", "pitches": ["D4", "A3", "F#3", "D3", "A2", "D2"] },
+    { "name": "Open G (D G D G B D)", "pitches": ["D4", "B3", "G3", "D3", "G2", "D2"] },
+    { "name": "DADGAD", "pitches": ["D4", "A3", "G3", "D3", "A2", "D2"] },
+    { "name": "7-String Standard (B E A D G B E)", "pitches": ["E4", "B3", "G3", "D3", "A2", "E2", "B1"] }
+  ],
+
+  "amps": [
+    "Marshall JCM800",
+    "Marshall Plexi Super Lead",
+    "Marshall Shredmaster (preamp pedal)",
+    "Mesa/Boogie Studio .22 Preamp",
+    "Mesa/Boogie Dual Rectifier",
+    "Mesa/Boogie Mark IV",
+    "Fender Twin Reverb",
+    "Fender Bassman",
+    "Fender Deluxe Reverb",
+    "Vox AC30",
+    "Randall RG100ES",
+    "Randall Century 200",
+    "Randall Warhead",
+    "Bogner Fish Preamp",
+    "Bogner Ecstasy",
+    "Roland JC-120 Jazz Chorus",
+    "Peavey 5150",
+    "Orange Rockerverb",
+    "Custom Tube Amp"
+  ],
+
+  "cabs": [
+    "Marshall 1960A 4x12 (Celestion G12T-75)",
+    "Marshall 1960B 4x12 (Greenback)",
+    "Mesa/Boogie Rectifier 4x12 Standard",
+    "Mesa/Boogie Rectifier 4x12 Oversized",
+    "Randall RS412XLT100 4x12",
+    "Fender 2x12 Combo",
+    "Vox AC30 2x12 (Celestion Blue)",
+    "Orange PPC412",
+    "Roland JC-120 2x12 Combo",
+    "Direct / Modelled"
+  ],
+
+  "pedalTypes": [
+    "Overdrive",
+    "Distortion",
+    "Fuzz",
+    "Wah",
+    "Chorus",
+    "Phaser",
+    "Flanger",
+    "Delay",
+    "Reverb",
+    "EQ",
+    "Pitch",
+    "Modulation",
+    "Compressor",
+    "Utility"
+  ],
+
+  "pedals": [
+    { "model": "Boss DS-1 Distortion", "type": "Distortion", "knobs": ["Tone", "Level", "Distortion"] },
+    { "model": "Boss DS-2 Turbo Distortion", "type": "Distortion", "knobs": ["Tone", "Level", "Dist", "Mode"] },
+    { "model": "ProCo RAT", "type": "Distortion", "knobs": ["Distortion", "Filter", "Volume"] },
+    { "model": "Ibanez TS9 Tube Screamer", "type": "Overdrive", "knobs": ["Drive", "Tone", "Level"] },
+    { "model": "Marshall Shredmaster", "type": "Distortion", "knobs": ["Gain", "Contour", "Treble", "Bass", "Volume"] },
+    { "model": "Big Muff Pi", "type": "Fuzz", "knobs": ["Volume", "Tone", "Sustain"] },
+    { "model": "EHX Small Clone Chorus", "type": "Chorus", "knobs": ["Rate", "Depth"] },
+    { "model": "EHX Poly Chorus", "type": "Modulation", "knobs": ["Rate", "Depth", "Feedback", "Filter Matrix"] },
+    { "model": "EHX Holy Grail Reverb", "type": "Reverb", "knobs": ["Blend", "Mode"] },
+    { "model": "Dunlop Cry Baby Wah", "type": "Wah", "knobs": ["Sweep"] },
+    { "model": "Dunlop Cry Baby From Hell", "type": "Wah", "knobs": ["Q", "Range", "Volume"] },
+    { "model": "MXR 6-Band Graphic EQ", "type": "EQ", "knobs": ["100Hz", "200Hz", "400Hz", "800Hz", "1.6kHz", "3.2kHz"] },
+    { "model": "MXR Phase 90", "type": "Phaser", "knobs": ["Speed"] },
+    { "model": "MXR Talk Box", "type": "Utility", "knobs": ["Level"] },
+    { "model": "DigiTech Whammy", "type": "Pitch", "knobs": ["Mode", "Mix"] },
+    { "model": "DigiTech Whammy WH-1", "type": "Pitch", "knobs": ["Mode", "Pedal Range"] },
+    { "model": "Line 6 DL4 Delay Modeler", "type": "Delay", "knobs": ["Delay Time", "Repeats", "Mix", "Model"] },
+    { "model": "Boss RE-20 Space Echo", "type": "Delay", "knobs": ["Repeat Rate", "Intensity", "Echo Volume", "Mode"] },
+    { "model": "Boss CE-2 Chorus", "type": "Chorus", "knobs": ["Rate", "Depth"] },
+    { "model": "Boss BF-2 Flanger", "type": "Flanger", "knobs": ["Manual", "Depth", "Rate", "Res"] },
+    { "model": "Tech 21 SansAmp GT2", "type": "Distortion", "knobs": ["Level", "High", "Low", "Drive"] },
+    { "model": "Furman PQ-3 Parametric EQ", "type": "EQ", "knobs": ["Low", "Mid", "High", "Level"] },
+    { "model": "Rocktron Guitar Silencer", "type": "Utility", "knobs": ["Threshold"] },
+    { "model": "Electro-Harmonix Memory Man", "type": "Delay", "knobs": ["Blend", "Feedback", "Delay"] }
+  ],
+
+  "ampKnobs": ["Gain", "Bass", "Mid", "Treble", "Presence", "Master"],
+
+  "difficulties": ["Beginner", "Intermediate", "Advanced", "Expert"]
+}

@@ -17,20 +17,22 @@
  * Not supported: tuplets, dotted notes, bends, vibrato, dynamics, repeats.
  */
 
-// Default tunings, written string 1 (highest) first, as alphaTex expects.
+/*
+ * GUITAR ONLY. This converter emits a single six-plus-string guitar staff.
+ * Bass and drum handling was removed deliberately - see guitar-tracks.js for
+ * the matching filter applied to imported Guitar Pro scores.
+ */
+
+// Default guitar tunings, written string 1 (highest) first, as alphaTex expects.
 const DEFAULT_TUNINGS = {
-  4: ['G2', 'D2', 'A1', 'E1'], // bass
-  5: ['G2', 'D2', 'A1', 'E1', 'B0'],
-  6: ['E4', 'B3', 'G3', 'D3', 'A2', 'E2'], // guitar
+  6: ['E4', 'B3', 'G3', 'D3', 'A2', 'E2'],
   7: ['E4', 'B3', 'G3', 'D3', 'A2', 'E2', 'B1'],
+  8: ['E4', 'B3', 'G3', 'D3', 'A2', 'E2', 'B1', 'F#1'],
 };
 
-// General MIDI program numbers, keyed by the `instrument` field in songs.json.
-const GM_PROGRAMS = {
-  Guitar: 30, // Distortion Guitar
-  Bass: 33, // Electric Bass (finger)
-  Drums: 0,
-};
+// General MIDI program 30 is Distortion Guitar - the sensible default for a
+// rock/metal catalogue. `\instrument` can still be overridden per song.
+const GM_DISTORTION_GUITAR = 30;
 
 const SLOTS_PER_BAR = 16; // 16th-note resolution in 4/4
 
@@ -47,8 +49,8 @@ function parseSectionHeader(line) {
 
 /**
  * Splits the raw tab text into systems: runs of consecutive tab lines, each
- * optionally preceded by a section header. A six-line run is one guitar system,
- * a four-line run is one bass system, and so on.
+ * optionally preceded by a section header. A six-line run is one standard
+ * guitar system; seven- and eight-line runs are extended-range guitars.
  */
 function splitIntoSystems(tabText) {
   const systems = [];
@@ -246,17 +248,28 @@ function largestFittingDuration(remaining) {
   return value;
 }
 
-/** Chooses a tuning for a system based on how many strings it has. */
-function tuningFor(stringCount, instrument) {
-  if (DEFAULT_TUNINGS[stringCount]) return DEFAULT_TUNINGS[stringCount];
-  return instrument === 'Bass' ? DEFAULT_TUNINGS[4] : DEFAULT_TUNINGS[6];
+/**
+ * Chooses the tuning for a staff.
+ *
+ * A song may carry an explicit `tuningPitches` array (Drop D, Eb standard, and
+ * so on) - these bands rarely play in standard, so honouring it matters. It is
+ * only used when its length matches the number of lines actually drawn in the
+ * ASCII tab; a mismatch means one of the two is stale, and the string count in
+ * the tab is the one the note positions were written against.
+ *
+ * @param {number} stringCount - lines in the ASCII system
+ * @param {string[]|undefined} declared - the song's tuningPitches, if any
+ */
+function tuningFor(stringCount, declared) {
+  if (Array.isArray(declared) && declared.length === stringCount) return declared;
+  return DEFAULT_TUNINGS[stringCount] || DEFAULT_TUNINGS[6];
 }
 
 /**
- * Converts one track's ASCII tab into the alphaTex *body* for a single track
- * (everything after `\track`). Returns { body, stringCount }.
+ * Converts one guitar part's ASCII tab into the alphaTex *body* (everything
+ * after `\track`). Returns { body, stringCount }.
  */
-export function convertTrackBody(tabText, instrument) {
+export function convertTrackBody(tabText) {
   const systems = splitIntoSystems(tabText || '');
   if (systems.length === 0) return { body: '', stringCount: 6 };
 
@@ -289,33 +302,36 @@ function escapeTex(text) {
 }
 
 /**
- * Converts a whole song record from songs.json into a single multi-track
- * alphaTex document, so every instrument shows up in the AlphaTab mixer.
+ * Converts a song record from songs.json into a single-guitar-track alphaTex
+ * document.
  *
- * @param {object} song - a song entry: { title, artist, bpm, tracks: [...] }
+ * Songs are guitar-only: one record carries one guitar arrangement in `tab`,
+ * played with the rig described in `song.rig`. Multi-instrument scores only
+ * arrive via Guitar Pro upload, and those are filtered to guitar tracks by
+ * guitar-tracks.js at load time rather than here.
+ *
+ * Note that capo is intentionally *not* emitted. alphaTex has no capo metadata
+ * keyword, and ASCII tab frets are conventionally written relative to the capo
+ * already, so applying it again would transpose the part twice. It is surfaced
+ * in the rig inspector instead.
+ *
+ * @param {object} song - { title, artist, bpm, tab, tuningPitches, rig }
  * @returns {string} alphaTex source ready for `api.tex(...)`
  */
 export function songToAlphaTex(song) {
-  const header = [
+  const { body, stringCount } = convertTrackBody(song.tab);
+  const tuning = tuningFor(stringCount, song.tuningPitches);
+  const trackName = (song.rig && song.rig.preset) || 'Guitar';
+
+  return [
     `\\title "${escapeTex(song.title || 'Untitled')}"`,
     `\\artist "${escapeTex(song.artist || 'Unknown')}"`,
     `\\tempo ${song.bpm || 120}`,
-  ];
-
-  const trackBlocks = (song.tracks || []).map((track) => {
-    const { body, stringCount } = convertTrackBody(track.tab, track.instrument);
-    const tuning = tuningFor(stringCount, track.instrument);
-    const program = GM_PROGRAMS[track.instrument] ?? GM_PROGRAMS.Guitar;
-
-    return [
-      `\\track "${escapeTex(track.instrument || 'Track')}"`,
-      `\\instrument ${program}`,
-      `\\tuning ${tuning.join(' ')}`,
-      '.',
-      body,
-    ].join('\n');
-  });
-
-  // The `.` terminates the metadata block and starts the notation.
-  return `${header.join('\n')}\n.\n${trackBlocks.join('\n')}`;
+    '.', // terminates the metadata block and starts the notation
+    `\\track "${escapeTex(trackName)}"`,
+    `\\instrument ${GM_DISTORTION_GUITAR}`,
+    `\\tuning ${tuning.join(' ')}`,
+    '.',
+    body,
+  ].join('\n');
 }
