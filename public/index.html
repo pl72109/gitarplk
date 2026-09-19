@@ -22,6 +22,7 @@
     <!-- Top bar: branding, song meta, library actions -->
     <header class="player-topbar">
         <div class="brand">
+            <button id="btn-toggle-sidebar" class="btn-hamburger" aria-label="Toggle song directory" aria-expanded="false">☰</button>
             <span class="logo">GITARPLK</span>
             <span class="tagline">Guitar Tabs &amp; Rigs</span>
         </div>
@@ -33,6 +34,9 @@
     </header>
 
     <div class="app-layout">
+        <!-- Tap-to-close backdrop shown behind the sidebar when it's an off-canvas drawer -->
+        <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
         <!-- Sidebar Song Directory -->
         <aside class="sidebar">
             <div class="sidebar-header">

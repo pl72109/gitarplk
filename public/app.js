@@ -31,6 +31,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('mixer-notice')
   );
 
+  // Song directory drawer: an off-canvas panel on mobile (see the
+  // max-width: 900px breakpoint in style.css), a permanent column above it.
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+  const toggleSidebarBtn = document.getElementById('btn-toggle-sidebar');
+  const closeSidebar = () => {
+    sidebar.classList.remove('open');
+    sidebarBackdrop.classList.remove('visible');
+    toggleSidebarBtn.setAttribute('aria-expanded', 'false');
+  };
+  toggleSidebarBtn.addEventListener('click', () => {
+    const open = sidebar.classList.toggle('open');
+    sidebarBackdrop.classList.toggle('visible', open);
+    toggleSidebarBtn.setAttribute('aria-expanded', String(open));
+  });
+  sidebarBackdrop.addEventListener('click', closeSidebar);
+  // Close on any song pick, even a rig-only entry with no score (which never
+  // fires onSelect below) — the drawer's job is done once a choice is made.
+  document.getElementById('song-list').addEventListener('click', (event) => {
+    if (event.target.closest('li')) closeSidebar();
+  });
+
   const library = new SongLibrary({
     onSelect: (song) => {
       player.load(song).catch((error) => {
@@ -52,8 +74,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     addSong.open(song ? { artist: song.artist, title: song.title } : {});
   });
 
-  // Collapse/expand the mixer drawer.
+  // Collapse/expand the mixer drawer. On mobile it overlays the workspace
+  // (see the max-width: 900px breakpoint in style.css), so start collapsed
+  // there instead of covering the screen on load; on desktop it stays open
+  // as a permanent column, matching prior behavior.
   const mixerPanel = document.getElementById('mixer-panel');
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    mixerPanel.classList.add('collapsed');
+  }
   document.getElementById('btn-toggle-mixer').addEventListener('click', () => {
     mixerPanel.classList.toggle('collapsed');
   });
