@@ -1097,6 +1097,42 @@ input[type="range"]:not(.tp-progress)::-moz-range-thumb {
     .mixer-panel { position: fixed; right: 0; top: var(--topbar-h); bottom: var(--transport-h); z-index: 40; }
     .tp-zoom-group, .tp-status-group { display: none; }
     .step-text small { display: none; }
+
+    /* Compact song meta panel: the rig inspector reads fine smaller and in
+       a single scrollable row, freeing most of the screen for the tab
+       viewport underneath it. */
+    .meta-panel { padding: 10px 14px; }
+    .meta-title-group { gap: 8px; margin-bottom: 8px; }
+    .meta-title-group h1 { font-size: 16px; }
+    .meta-title-group h3 { font-size: 12px; }
+
+    .rig-inspector { flex-wrap: nowrap; overflow-x: auto; gap: 8px; padding-bottom: 2px; }
+    .rig-card { flex: 0 0 150px; padding: 8px; }
+    .rig-card.compact { flex: 0 0 130px; }
+    .card-label { font-size: 8px; }
+    .card-label.margin-top { margin-top: 6px; }
+    .card-title { font-size: 11px; margin: 2px 0 4px; }
+    .card-val { font-size: 11px; margin-top: 2px; }
+    .card-sub { font-size: 9px; margin-top: 5px; }
+
+    .knobs-grid { gap: 5px; }
+    .knob-unit { padding: 3px 6px; font-size: 10px; }
+    .knob-unit span { font-size: 8px; }
+
+    .pedals-list .pedal-row { margin-bottom: 3px; }
+    .pedals-list .pedal-name { font-size: 11px; }
+    .pedals-list .pedal-knobs-summary { font-size: 9px; }
+
+    .rig-notes {
+        margin-top: 6px;
+        padding-left: 8px;
+        font-size: 11px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 640px) {
